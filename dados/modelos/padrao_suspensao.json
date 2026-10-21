@@ -1,0 +1,74 @@
+{
+ "id": "suspensao",
+ "nome": "Notificação Extrajudicial de Suspensão de Serviços por Inadimplemento",
+ "descricao": "2º passo: suspende a prestação dos serviços e alerta sobre os riscos fiscais.",
+ "mostrar_numero": false,
+ "nome_arquivo": "{{RAZAO_SOCIAL}} - Notificação Extrajudicial de Suspensão ({{DATA_ASSINATURA}})",
+ "campos": [
+  {
+   "chave": "RAZAO_SOCIAL",
+   "rotulo": "Razão social do cliente",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "CNPJ",
+   "rotulo": "CNPJ do cliente",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "AOS_CUIDADOS",
+   "rotulo": "A/C (nome do sócio/responsável)",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "VENCIMENTOS",
+   "rotulo": "Mensalidade(s) em aberto (vencimentos)",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "VALOR_DEBITO",
+   "rotulo": "Valor total em aberto (R$)",
+   "padrao": "",
+   "tipo": "dinheiro",
+   "obrigatorio": true
+  },
+  {
+   "chave": "CLAUSULA_SUSPENSAO",
+   "rotulo": "Cláusula do contrato que prevê a suspensão",
+   "padrao": "6.3"
+  },
+  {
+   "chave": "TELEFONE_FINANCEIRO",
+   "rotulo": "Telefone/WhatsApp do Departamento Financeiro",
+   "padrao": "(61) 4000-0000"
+  },
+  {
+   "chave": "EMAIL_FINANCEIRO",
+   "rotulo": "E-mail do Departamento Financeiro",
+   "padrao": "financeiro@alfacontabil.example"
+  },
+  {
+   "chave": "CONTRATADA",
+   "rotulo": "Empresa Alfa do contrato",
+   "padrao": "ALFA SERVIÇOS CONTÁBEIS LTDA"
+  },
+  {
+   "chave": "DATA_ASSINATURA",
+   "rotulo": "Data do documento",
+   "padrao": "",
+   "tipo": "data_extenso"
+  }
+ ],
+ "texto": "# NOTIFICAÇÃO EXTRAJUDICIAL DE SUSPENSÃO DE SERVIÇOS POR INADIMPLEMENTO\n\n**À(ao) CONTRATANTE: {{RAZAO_SOCIAL}}**\n\n**CNPJ nº:** {{CNPJ}}\n\n**A/C:** {{AOS_CUIDADOS}}\n\nPrezado(a) Cliente,\n\nConstatamos em nossos registros que a empresa acima citada encontra-se inadimplente com as mensalidades do Contrato de Prestação de Serviços Profissionais firmado com a {{CONTRATADA}}, com vencimento(s) em {{VENCIMENTOS}}, no valor total de **R$ {{VALOR_DEBITO}} ({{VALOR_DEBITO_EXTENSO}})**, referente a honorários em aberto.\n\nDiante disso, fica Vossa Senhoria **NOTIFICADA**, com base na cláusula {{CLAUSULA_SUSPENSAO}} do contrato vigente, de que, **a partir do recebimento deste documento, fica suspensa a prestação de todos os serviços contábeis**. Ressaltamos que quaisquer despesas, juros ou multas decorrentes dessa paralisação serão de única e exclusiva responsabilidade da CONTRATANTE.\n\n## ⚠️ ALERTAS E RISCOS LEGAIS IMPORTANTES\n\nA suspensão dos serviços contábeis impede o envio das declarações acessórias e obrigações fiscais da sua empresa. A ausência dessas transmissões gerará os seguintes impactos imediatos perante os órgãos reguladores:\n\n1. **Suspensão da Inscrição Estadual (CF/DF):** Conforme prevê o art. 27-E do Decreto nº 18.955/1997 do Distrito Federal, o descumprimento de obrigações ou a falta de apresentação de documentos exigidos pelo fisco estadual implicará a suspensão imediata da Inscrição Estadual já concedida. Sem a Inscrição ativa, a empresa fica legalmente proibida de emitir notas fiscais e realizar compras de mercadorias.\n\n2. **Suspensão e Bloqueio do CNPJ:** De acordo com a Instrução Normativa da Receita Federal do Brasil (RFB) nº 2119/2022, a falta de entrega de declarações essenciais (como DCTF, EFD, entre outras) por períodos consecutivos altera a situação cadastral da empresa para \"Inapta\", suspendendo o CNPJ na base de dados federal. Um CNPJ suspenso bloqueia contas bancárias corporativas, impede a emissão de certidões negativas e inviabiliza qualquer atividade comercial ou jurídica.\n\n## REGULARIZAÇÃO\n\nOs serviços contábeis serão restabelecidos imediatamente após a quitação integral do débito ou mediante a assinatura de um Termo de Acordo de Parcelamento.\n\nCaso haja interesse na renegociação dos valores, solicitamos que entre em contato com o nosso Departamento Financeiro de forma prioritária:\n\n• 📞 **Telefone/WhatsApp:** {{TELEFONE_FINANCEIRO}}\n\n• 📧 **E-mail:** {{EMAIL_FINANCEIRO}}\n\nCaso o pagamento já tenha sido realizado, favor desconsiderar esta notificação e nos enviar o comprovante para a regularização imediata de nossos registros.\n\nA ALFA reitera o interesse em manter a parceria e espera poder continuar prestando bons serviços à sua empresa.\n\nAtenciosamente,\n\n[[ASSINATURAS]]\n\n>> Brasília/DF, {{DATA_ASSINATURA}}.",
+ "assinaturas": [
+  [
+   "{{CONTRATADA}}",
+   "Departamento Financeiro / Jurídico"
+  ]
+ ],
+ "testemunhas": false
+}

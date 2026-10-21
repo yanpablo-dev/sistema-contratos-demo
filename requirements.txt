@@ -1,0 +1,3 @@
+# Opcionais: o sistema roda só com a biblioteca padrão do Python.
+pdfplumber  # leitura do texto de contratos em PDF na análise da pasta
+openpyxl    # importação e exportação de planilhas Excel

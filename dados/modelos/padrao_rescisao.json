@@ -1,0 +1,53 @@
+{
+ "id": "rescisao",
+ "nome": "Notificação de Rescisão de Contrato de Prestação de Serviços Contábeis",
+ "descricao": "Avisa o cliente de que a Alfa encerra o contrato a partir de uma data.",
+ "mostrar_numero": false,
+ "nome_arquivo": "{{RAZAO_SOCIAL}} - Notificação de Rescisão de Contrato ({{DATA_ASSINATURA}})",
+ "campos": [
+  {
+   "chave": "RAZAO_SOCIAL",
+   "rotulo": "Razão social do cliente",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "CNPJ",
+   "rotulo": "CNPJ do cliente",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "AOS_CUIDADOS",
+   "rotulo": "A/C (nome do sócio ou responsável legal)",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "DATA_ENCERRAMENTO",
+   "rotulo": "Último dia do contrato",
+   "padrao": "",
+   "tipo": "data",
+   "obrigatorio": true
+  },
+  {
+   "chave": "CONTRATADA",
+   "rotulo": "Empresa Alfa do contrato",
+   "padrao": "ALFA SERVIÇOS CONTÁBEIS LTDA"
+  },
+  {
+   "chave": "DATA_ASSINATURA",
+   "rotulo": "Data do documento",
+   "padrao": "",
+   "tipo": "data_extenso"
+  }
+ ],
+ "assinaturas": [
+  [
+   "{{CONTRATADA}}",
+   "Departamento Financeiro / Jurídico"
+  ]
+ ],
+ "testemunhas": false,
+ "texto": "# NOTIFICAÇÃO DE RESCISÃO DE CONTRATO DE PRESTAÇÃO DE SERVIÇOS CONTÁBEIS\n\n**Ao(À) {{RAZAO_SOCIAL}}**\n\n**CNPJ:** {{CNPJ}}\n\n**A/C:** {{AOS_CUIDADOS}}\n\n**Ref.:** Rescisão do Contrato de Prestação de Serviços Contábeis\n\nPrezados,\n\nVimos por meio desta notificar formalmente que, a partir do dia **{{DATA_ENCERRAMENTO}}**, daremos por encerrado o Contrato de Prestação de Serviços Contábeis firmado entre esta empresa contábil e vossa senhoria.\n\nRessaltamos que, a partir de **{{DATA_POS_ENCERRAMENTO}}**, todas as rotinas operacionais, fiscais, trabalhistas e contábeis, bem como o envio de quaisquer declarações e obrigações acessórias futuras ou retroativas, passarão a ser de inteira e exclusiva responsabilidade da vossa empresa ou do novo profissional por vós contratado. Relembramos, ainda, a necessidade de vossa senhoria providenciar a habilitação do novo responsável técnico junto à Secretaria de Estado de Fazenda e Planejamento do Distrito Federal.\n\nA entrega do material remanescente e o repasse de senhas/chaves de acesso serão formalizados mediante a assinatura do Termo de Transferência de Responsabilidade Técnica e protocolo de entrega.\n\nEsclarecemos que, caso haja interesse em uma recontratação futura de nossos serviços em momento posterior, a solicitação passará por nova análise cadastral e estará sujeita às condições comerciais vigentes à época.\n\nAgradecemos a parceria mantida até o momento e permanecemos à disposição para dirimir eventuais dúvidas durante este período de transição.\n\nAtenciosamente,\n\n[[ASSINATURAS]]\n\n>> Brasília/DF, {{DATA_ASSINATURA}}."
+}

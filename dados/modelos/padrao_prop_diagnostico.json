@@ -1,0 +1,79 @@
+{
+ "id": "prop_diagnostico",
+ "nome": "Proposta de Diagnóstico Fiscal",
+ "descricao": "Retificação de DCTF e ECF para recuperação de créditos, com honorários sobre os créditos encontrados.",
+ "mostrar_numero": true,
+ "rotulo_numero": "PROPOSTA Nº",
+ "campo_numero": "NUMERO_PROPOSTA",
+ "nome_arquivo": "{{RAZAO_SOCIAL}} - Proposta de Diagnóstico Fiscal ({{NUMERO_PROPOSTA}})",
+ "campos": [
+  {
+   "chave": "NUMERO_PROPOSTA",
+   "rotulo": "Nº da proposta (ex.: 047 / 2026)",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "RAZAO_SOCIAL",
+   "rotulo": "Cliente (razão social ou nome)",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "CNPJ",
+   "rotulo": "CNPJ do cliente (se tiver)",
+   "padrao": ""
+  },
+  {
+   "chave": "AOS_CUIDADOS",
+   "rotulo": "A/C (pessoa de contato)",
+   "padrao": ""
+  },
+  {
+   "chave": "ANOS_COMPETENCIA",
+   "rotulo": "Anos de competência (ex.: 2024 - 2025)",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "PERCENTUAL",
+   "rotulo": "Honorários sobre os créditos encontrados",
+   "padrao": "10% (dez por cento)"
+  },
+  {
+   "chave": "VALIDADE_DIAS",
+   "rotulo": "Validade da proposta (dias)",
+   "padrao": "15",
+   "tipo": "numero"
+  },
+  {
+   "chave": "CONTATO",
+   "rotulo": "Telefone / contato para esclarecimentos",
+   "padrao": "(61) 4000-0000, Sr. Carlos"
+  },
+  {
+   "chave": "CONTRATADA",
+   "rotulo": "Empresa Alfa da proposta",
+   "padrao": "ALFA SERVIÇOS CONTÁBEIS LTDA"
+  },
+  {
+   "chave": "CNPJ_CONTRATADA",
+   "rotulo": "CNPJ da empresa Alfa",
+   "padrao": "11.222.333/0001-81"
+  },
+  {
+   "chave": "DATA_ASSINATURA",
+   "rotulo": "Data da proposta",
+   "padrao": "",
+   "tipo": "data_extenso"
+  }
+ ],
+ "assinaturas": [
+  [
+   "{{CONTRATADA}}",
+   "Proponente"
+  ]
+ ],
+ "testemunhas": false,
+ "texto": "# PROPOSTA DE PRESTAÇÃO DE SERVIÇOS – DIAGNÓSTICO FISCAL\n\n**Ao(À) {{RAZAO_SOCIAL}}**\n\n?? **CNPJ:** {{CNPJ}}\n\n?? **A/C:** {{AOS_CUIDADOS}}\n\nAtendendo solicitação de V. Sas., temos o prazer e a honra de submeter à vossa apreciação a presente proposta para prestação de serviços.\n\nInformamos que nossos serviços são efetuados de acordo com as normas brasileiras de contabilidade e por profissionais qualificados, e nossa prática é estender nossos trabalhos, revisando as rotinas contábeis de cada empresa. A esse respeito, poderemos sugerir melhorias, sistemas mais eficientes de controle de documentos ou impostos, simplificações ou, ainda, reforço nos controles internos da empresa.\n\nAproveitamos o ensejo para agradecer a oportunidade que nos foi concedida de apresentarmos a presente proposta e subscrevemo-nos.\n\n## 1. - DESCRIÇÃO DOS SERVIÇOS\n\nRetificação perante a Secretaria da Receita Federal do Brasil (RFB):\n\n1.1. Retificação da Declaração de Débitos e Créditos Tributários Federais (DCTF), compreendendo os anos de competência {{ANOS_COMPETENCIA}}.\n\n1.2. Retificação da Escrituração Contábil Fiscal (ECF), compreendendo os anos de competência {{ANOS_COMPETENCIA}}.\n\n## 2. - CONDIÇÕES DE EXECUÇÃO\n\nOs serviços objeto desta proposta serão elaborados por pessoal e material fornecidos pela CONTRATADA, correndo às suas expensas todos e quaisquer custos e encargos deles advindos, inclusive trabalhistas, à exceção das despesas necessárias para a execução dos serviços, as quais correrão por conta da CONTRATANTE.\n\n2.1. A CONTRATADA se compromete a fornecer à CONTRATANTE os relatórios conclusivos do trabalho final de diagnóstico, indicando os créditos apurados em favor da CONTRATANTE e os meios legais para aproveitá-los.\n\n2.2. A CONTRATANTE, considerando o conteúdo do item 2.1, determinará o prosseguimento ou não dos trabalhos da CONTRATADA.\n\n2.3. Em caso de decisão favorável da CONTRATANTE pelo prosseguimento dos trabalhos, a regularização legal do aproveitamento dos créditos e a restituição de valores recolhidos indevidamente dar-se-ão, em quaisquer casos, depois de devidamente apreciadas e aprovadas pela CONTRATANTE, face à apresentação das normas legais (leis, decretos, portarias, pareceres normativos etc.) que regem a matéria.\n\n2.4. As consultas, defesas e recursos legais relativos ao item 1, se cabíveis e necessários, serão minutados e acompanhados pela CONTRATADA junto aos órgãos competentes até a decisão final, inclusive junto ao Poder Judiciário, se for o caso.\n\n## 3. - HONORÁRIOS\n\nPelos serviços prestados, objeto da presente proposta, a CONTRATANTE pagará à CONTRATADA honorários de **{{PERCENTUAL}}** sobre os valores, corrigidos pela Taxa SELIC, dos créditos encontrados, de acordo com o item 1.\n\n## 4. - FORMAS DE TRABALHO\n\nTodo o trabalho será realizado em nossa sede, a partir da apresentação, pela atual diretoria, dos documentos existentes no dia da aceitação desta proposta.\n\n## 5. - DISPOSIÇÕES GERAIS\n\nEsta proposta tem a validade de {{VALIDADE_DIAS}} dias corridos a partir da data de sua emissão.\n\nA {{CONTRATADA}} fica à disposição para maiores esclarecimentos que não tenham sido aqui expostos, pessoalmente ou pelo telefone {{CONTATO}}, e ainda na sede da empresa.\n\nAtenciosamente,\n\n>> Brasília/DF, {{DATA_ASSINATURA}}.\n\n[[ASSINATURAS]]"
+}

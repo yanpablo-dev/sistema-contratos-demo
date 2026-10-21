@@ -1,0 +1,20 @@
+# Dados gerados pelo sistema e pelo gerar_exemplos.py (recriados com: python gerar_exemplos.py)
+dados/*
+!dados/modelos/
+exemplo_contratos/
+
+# Cópias antigas de modelos
+dados/modelos/*.bak
+dados/modelos/*.antes_espaco
+
+# Documentos e pacotes
+*.zip
+*.docx
+*.pdf
+
+# Arquivos temporários do Python e do Windows
+__pycache__/
+*.pyc
+Thumbs.db
+desktop.ini
+~$*

@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gestão de Contratos · Alfa</title>
+<link rel="icon" href="/api/modelos/logo">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-painel" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></symbol>
+    <symbol id="i-contratos" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6M9 9h2"/></symbol>
+    <symbol id="i-pastas" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-empresas" viewBox="0 0 24 24"><path d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M16 9h2a2 2 0 0 1 2 2v10M3 21h18M8 7h4M8 11h4M8 15h4"/></symbol>
+    <symbol id="i-assinatura" viewBox="0 0 24 24"><path d="M3 17c3 0 4-6 6-6s1 5 3 5 3-3 4-3 1 2 2 2h3M3 21h18"/><path d="M15 3l3 3-7 7H8v-3z"/></symbol>
+    <symbol id="i-movs" viewBox="0 0 24 24"><path d="M7 4l-4 4 4 4M3 8h14M17 20l4-4-4-4M21 16H7"/></symbol>
+    <symbol id="i-config" viewBox="0 0 24 24"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></symbol>
+    <symbol id="i-modelos" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M12 11v6M9 14h6"/></symbol>
+    <symbol id="i-antigos" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="5" rx="1.5"/><path d="M5 9v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9M10 13h4"/></symbol>
+    <symbol id="i-novos" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 15l2 2 4-4"/></symbol>
+    <symbol id="i-aditivos" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></symbol>
+    <symbol id="i-cobranca" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15 9.2c-.6-.8-1.7-1.2-3-1.2-1.7 0-3 .8-3 2s1.3 1.7 3 2 3 .8 3 2-1.3 2-3 2c-1.3 0-2.5-.5-3-1.3M12 6v2M12 16v2"/></symbol>
+    <symbol id="i-distrato" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9.5 12.5l5 5M14.5 12.5l-5 5"/></symbol>
+    <symbol id="i-proposta" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/><circle cx="16.5" cy="16.5" r="0.6"/></symbol>
+    <symbol id="i-atualizar"viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16M3 12A9 9 0 0 1 18.5 5.8L21 8M21 3v5h-5M3 21v-5h5"/></symbol>
+    <symbol id="i-baixar" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></symbol>
+  </defs>
+</svg>
+<header class="topo">
+  <div class="topo-linha">
+    <div class="marca">
+      <div class="marca-logo"><img src="/api/modelos/logo" alt="Alfa Contabilidade e Auditoria"></div>
+      <div class="marca-texto">Gestão de Contratos<small>Alfa Contabilidade e Auditoria</small></div>
+    </div>
+    <div class="topo-info">
+      <span class="info-chip" id="chipEmpresas">Empresas: —</span>
+      <span class="info-chip" id="chipAnalise">Análise: —</span>
+      <button class="btn" id="btnReanalisar" title="Lê de novo as pastas e o Contask salvo"><svg class="ico"><use href="#i-atualizar"/></svg>Reanalisar</button>
+      <a class="btn" href="/api/exportar" id="btnExportar"><svg class="ico"><use href="#i-baixar"/></svg>Exportar Excel</a>
+      <a class="btn" href="/api/exportar-inicio" id="btnExportarInicio" title="Planilha modelo: início do contrato de cada empresa ativa, com a data da exportação"><svg class="ico"><use href="#i-baixar"/></svg>Início dos contratos</a>
+    </div>
+  </div>
+  <nav class="abas" id="abas">
+    <button class="aba ativa" data-aba="painel"><svg class="ico"><use href="#i-painel"/></svg>Painel</button>
+    <button class="aba" data-aba="contratos"><svg class="ico"><use href="#i-contratos"/></svg>Contratos <span class="cont" id="contContratos"></span></button>
+    <button class="aba" data-aba="pastas"><svg class="ico"><use href="#i-pastas"/></svg>Pastas</button>
+    <button class="aba" data-aba="empresas"><svg class="ico"><use href="#i-empresas"/></svg>Empresas</button>
+    <button class="aba" data-aba="autentique"><svg class="ico"><use href="#i-assinatura"/></svg>Autentique <span class="cont" id="contAut"></span></button>
+    <button class="aba" data-aba="movs"><svg class="ico"><use href="#i-movs"/></svg>Movimentações</button>
+    <span class="aba-sep" aria-hidden="true"></span>
+    <button class="aba" data-aba="modelos"><svg class="ico"><use href="#i-modelos"/></svg>Modelos de Contrato</button>
+    <button class="aba" data-aba="antigos"><svg class="ico"><use href="#i-antigos"/></svg>Contratos Antigos <span class="cont" id="contAntigos"></span></button>
+    <button class="aba" data-aba="novos"><svg class="ico"><use href="#i-novos"/></svg>Contratos Novos <span class="cont" id="contNovos"></span></button>
+    <button class="aba" data-aba="aditivos"><svg class="ico"><use href="#i-aditivos"/></svg>Termos Aditivos <span class="cont" id="contAditivos"></span></button>
+    <button class="aba" data-aba="cobranca"><svg class="ico"><use href="#i-cobranca"/></svg>Cobrança / Termos de Acordo <span class="cont" id="contCobranca"></span></button>
+    <button class="aba" data-aba="encerramento"><svg class="ico"><use href="#i-distrato"/></svg>Rescisão / Distrato <span class="cont" id="contEnc"></span></button>
+    <button class="aba" data-aba="propostas"><svg class="ico"><use href="#i-proposta"/></svg>Propostas <span class="cont" id="contProp"></span></button>
+    <button class="aba aba-fim" data-aba="config"><svg class="ico"><use href="#i-config"/></svg>Configurações</button>
+  </nav>
+  <div class="progresso" id="progresso"><div></div></div>
+  <div class="progresso-texto" id="progressoTexto"></div>
+</header>
+
+<main>
+  <!-- ======================= PAINEL ======================= -->
+  <section class="secao ativa" id="sec-painel">
+    <h2>Painel</h2>
+    <p class="sub" id="painelSub">Visão geral dos contratos e da carteira de empresas.</p>
+    <div id="avisoSemEmpresas"></div>
+    <div class="grade g-kpi" id="kpis"></div>
+    <div class="grade g-2" style="margin-top:14px">
+      <div class="cartao">
+        <h3>Distribuição dos contratos</h3>
+        <div class="dist" id="distBarra"></div>
+        <div class="legenda" id="distLegenda"></div>
+      </div>
+      <div class="cartao">
+        <h3>Próximos passos</h3>
+        <ol class="passos" id="passos"></ol>
+      </div>
+    </div>
+    <div class="grade g-2" style="margin-top:14px">
+      <div class="cartao">
+        <h3>Empresas encerradas com contrato ainda na pasta ativa <span class="dir mini" id="encQtd"></span></h3>
+        <div id="encLista"></div>
+      </div>
+      <div class="cartao">
+        <h3>Pastas principais</h3>
+        <div id="pastasResumo"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= CONTRATOS ======================= -->
+  <section class="secao" id="sec-contratos">
+    <h2>Contratos</h2>
+    <p class="sub">Cada arquivo com suas datas, a empresa identificada e a ação sugerida. Clique numa linha para ver os detalhes.</p>
+    <div class="chips" id="chipsSituacao"></div>
+    <div class="filtros">
+      <div class="campo cresce"><label for="fBusca">Buscar (arquivo, empresa, CNPJ, contratante)</label>
+        <input type="search" id="fBusca" placeholder="Digite para filtrar..."></div>
+      <div class="campo"><label for="fPasta">Pasta</label><select id="fPasta"></select></div>
+      <div class="campo"><label for="fAcao">Ação sugerida</label>
+        <select id="fAcao">
+          <option value="">Todas</option><option value="MOVER">Mover para encerrado</option>
+          <option value="REVISAR">Revisar</option><option value="MANTER">Manter</option>
+          <option value="RESTAURAR">Restaurar</option><option value="NENHUMA">Já encerrado</option>
+        </select></div>
+      <div class="campo"><label for="fDataDe">Modificado de</label><input type="date" id="fDataDe"></div>
+      <div class="campo"><label for="fDataAte">até</label><input type="date" id="fDataAte"></div>
+      <label class="check"><input type="checkbox" id="fOcultarEnc"> Ocultar já encerrados</label>
+      <button class="btn" id="btnLimparFiltros">Limpar filtros</button>
+    </div>
+    <div class="filtros" style="margin-top:-4px">
+      <button class="btn" id="btnSelMover">☑ Selecionar todos “a mover” visíveis</button>
+      <button class="btn" id="btnSelMoverDoc" title="Só os que têm prova no conteúdo (contratante ou CNPJ lido no documento)">☑ Só “a mover” confirmados pelo documento</button>
+    </div>
+    <div class="barra-lote" id="barraLote">
+      <b id="loteQtd">0 selecionados</b>
+      <button class="btn perigo" data-lote="mover">→ Mover para Contrato Encerrado</button>
+      <button class="btn" data-lote="restaurar">← Restaurar</button>
+      <button class="btn" data-lote="modelo_novo">📄 Gerar no novo modelo</button>
+      <button class="btn" data-lote="MANTER">Manter onde está</button>
+      <button class="btn" data-lote="MODELO">Marcar como modelo</button>
+      <button class="btn" data-lote="NAO_CLIENTE">Marcar “não é nossa”</button>
+      <button class="btn" data-lote="limpar">Desfazer marcações</button>
+      <button class="btn" data-lote="nada" style="margin-left:auto">Limpar seleção</button>
+    </div>
+    <div class="tabela-wrap">
+      <table>
+        <thead><tr id="cabContratos"></tr></thead>
+        <tbody id="corpoContratos"></tbody>
+      </table>
+      <div class="rodape-tabela" id="rodapeContratos"></div>
+    </div>
+  </section>
+
+  <!-- ======================= PASTAS ======================= -->
+  <section class="secao" id="sec-pastas">
+    <h2>Pastas</h2>
+    <p class="sub">Datas de criação e modificação de cada pasta, quantos arquivos ela tem e a situação dos contratos dentro dela.</p>
+    <div class="filtros">
+      <div class="campo cresce"><label for="pBusca">Buscar pasta</label><input type="search" id="pBusca" placeholder="Nome da pasta..."></div>
+      <label class="check"><input type="checkbox" id="pSoComArquivos" checked> Só pastas com arquivos</label>
+    </div>
+    <div class="tabela-wrap">
+      <table>
+        <thead><tr>
+          <th class="sem-ord">Pasta</th><th class="sem-ord">Criada em</th><th class="sem-ord">Modificada em</th>
+          <th class="sem-ord num">Arquivos</th><th class="sem-ord">Arquivo mais antigo</th><th class="sem-ord">Arquivo mais recente</th>
+          <th class="sem-ord num">Nossas</th><th class="sem-ord num">A mover</th><th class="sem-ord num">Revisar</th>
+          <th class="sem-ord num">Tamanho</th><th class="sem-ord"></th>
+        </tr></thead>
+        <tbody id="corpoPastas"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ======================= EMPRESAS ======================= -->
+  <section class="secao" id="sec-empresas">
+    <h2>Empresas (Contask)</h2>
+    <p class="sub" id="empSub">Carteira de empresas e quantos contratos de cada uma foram localizados nas pastas.</p>
+    <div class="chips" id="chipsEmpStatus"></div>
+    <div class="filtros">
+      <div class="campo cresce"><label for="eBusca">Buscar (nome, nº, CNPJ, responsável)</label><input type="search" id="eBusca" placeholder="Digite para filtrar..."></div>
+      <div class="campo"><label for="eFiltro">Mostrar</label>
+        <select id="eFiltro">
+          <option value="">Todas</option>
+          <option value="sem">Nossas sem contrato localizado</option>
+          <option value="com">Com contrato localizado</option>
+          <option value="enc">Encerradas com contrato na pasta ativa</option>
+        </select></div>
+    </div>
+    <div class="tabela-wrap">
+      <table>
+        <thead><tr id="cabEmpresas"></tr></thead>
+        <tbody id="corpoEmpresas"></tbody>
+      </table>
+      <div class="rodape-tabela" id="rodapeEmpresas"></div>
+    </div>
+  </section>
+
+  <!-- ======================= AUTENTIQUE ======================= -->
+  <section class="secao" id="sec-autentique">
+    <h2>Autentique</h2>
+    <p class="sub" id="autSub">Contratos enviados para assinatura eletrônica, com status, datas e signatários.</p>
+    <div id="autAviso"></div>
+    <div class="chips" id="chipsAut"></div>
+    <div class="filtros">
+      <div class="campo cresce"><label for="aBusca">Buscar (documento, empresa, signatário)</label><input type="search" id="aBusca" placeholder="Digite para filtrar..."></div>
+      <div class="campo"><label for="aFiltro">Mostrar</label>
+        <select id="aFiltro">
+          <option value="">Todos</option>
+          <option value="sem_local">Sem PDF na pasta</option>
+          <option value="enc">Empresa encerrada no Contask</option>
+          <option value="sem_emp">Empresa não identificada</option>
+        </select></div>
+      <button class="btn" id="btnAutSync">↻ Sincronizar Autentique</button>
+    </div>
+    <div class="tabela-wrap">
+      <table>
+        <thead><tr>
+          <th class="sem-ord">Documento</th><th class="sem-ord">Empresa (Contask)</th><th class="sem-ord">Assinatura</th>
+          <th class="sem-ord">Enviado em</th><th class="sem-ord">Assinado em</th><th class="sem-ord">Signatários</th>
+          <th class="sem-ord">Na pasta</th><th class="sem-ord"></th>
+        </tr></thead>
+        <tbody id="corpoAut"></tbody>
+      </table>
+      <div class="rodape-tabela" id="rodapeAut"></div>
+    </div>
+  </section>
+
+  <!-- ======================= MOVIMENTAÇÕES ======================= -->
+  <section class="secao" id="sec-movs">
+    <h2>Movimentações</h2>
+    <p class="sub">Histórico de tudo que foi movido pelo sistema. Qualquer movimentação pode ser desfeita.</p>
+    <div class="tabela-wrap">
+      <table>
+        <thead><tr>
+          <th class="sem-ord">Data</th><th class="sem-ord">Usuário</th><th class="sem-ord">Ação</th><th class="sem-ord">Empresa</th>
+          <th class="sem-ord">De → Para</th><th class="sem-ord">Situação</th><th class="sem-ord"></th>
+        </tr></thead>
+        <tbody id="corpoMovs"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ======================= CONFIGURAÇÕES ======================= -->
+  <section class="secao" id="sec-config">
+    <h2>Configurações</h2>
+    <p class="sub">Fonte das empresas, pastas e regras de classificação.</p>
+    <div class="grade g-2">
+      <div class="cartao">
+        <h3>Acesso por outros computadores</h3>
+        <div id="redeInfo"></div>
+        <p class="ajuda">Você está usando como: <b id="redeUsuario"></b></p>
+      </div>
+      <div class="cartao">
+        <h3>Contask (recomendado)</h3>
+        <div id="contaskStatus"></div>
+        <div class="form-grade">
+          <label for="cApi">Endereço da API</label><input type="text" id="cApi">
+          <label for="cEmail">E-mail do Contask</label><input type="email" id="cEmail" autocomplete="username">
+          <label for="cSenha">Senha</label><input type="password" id="cSenha" autocomplete="current-password">
+        </div>
+        <p class="ajuda">A senha é enviada só para o Contask e não é gravada. A conexão vale até fechar o sistema.
+          Pelo Contask vêm <b>todas</b> as empresas, inclusive BAIXADA e DISTRATO, com a data do encerramento.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
+          <button class="btn pri" id="btnConectar">Conectar e sincronizar</button>
+          <button class="btn" id="btnSincronizar">Sincronizar agora</button>
+          <button class="btn" id="btnSair">Desconectar</button>
+        </div>
+      </div>
+      <div class="cartao">
+        <h3>Planilha exportada do Contask (alternativa)</h3>
+        <p class="ajuda" style="margin-top:0">Use o arquivo <b>Relatorio_Empresas.xlsx</b> exportado do Contask.
+          Atenção: a planilha costuma trazer só as empresas ativas — empresas encerradas aparecerão como “Não é empresa nossa”.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+          <input type="file" id="arqExcel" accept=".xlsx,.xlsm">
+          <button class="btn pri" id="btnImportar">Importar planilha</button>
+        </div>
+        <div id="fonteAtual" class="ajuda" style="margin-top:12px"></div>
+      </div>
+      <div class="cartao">
+        <h3>Planilha de início dos contratos</h3>
+        <p class="ajuda" style="margin-top:0">Importe a planilha <b>Inicio_Contratos_Empresas_Ativas.xlsx</b> conferida.
+          As datas, observações e arquivos dela têm prioridade na exportação “Início dos contratos”; empresas que não
+          estão nela são completadas pela análise das pastas. O arquivo exportado sai com a data no nome.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+          <input type="file" id="arqInicio" accept=".xlsx,.xlsm">
+          <button class="btn pri" id="btnImportarInicio">Importar planilha</button>
+          <a class="btn" href="/api/exportar-inicio">Exportar com a data de hoje</a>
+        </div>
+        <div id="inicioAtual" class="ajuda" style="margin-top:12px"></div>
+      </div>
+      <div class="cartao">
+        <h3>Autentique (assinaturas)</h3>
+        <div id="autStatus"></div>
+        <div class="form-grade">
+          <label for="aPasta">Pasta no Autentique</label><input type="text" id="aPasta" placeholder="Link da pasta (painel.autentique.com.br/pastas/...) ou nome">
+          <label for="aChave">Chave de API</label><input type="password" id="aChave" autocomplete="off" placeholder="Cole aqui a chave gerada no Autentique">
+        </div>
+        <label class="check" style="margin-top:8px"><input type="checkbox" id="aSoNossas"> Trazer somente documentos de empresas nossas (ativas no Contask ou com PDF na pasta principal)</label>
+        <p class="ajuda">Gere a chave em <a href="https://painel.autentique.com.br/perfil/api" target="_blank" rel="noopener">painel.autentique.com.br/perfil/api</a>.
+          Ela fica salva só no seu usuário do Windows (não vai para a pasta compartilhada). O sistema apenas <b>lê</b> os documentos e baixa PDFs; não envia nem assina nada.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
+          <button class="btn pri" id="btnAutConectar">Conectar e sincronizar</button>
+          <button class="btn" id="btnAutSair">Remover chave</button>
+        </div>
+      </div>
+      <div class="cartao">
+        <h3>Pastas</h3>
+        <div class="form-grade">
+          <label for="cRaiz">Pasta dos contratos</label><input type="text" id="cRaiz">
+          <label for="cEnc">Pasta de encerrados</label><input type="text" id="cEnc">
+        </div>
+        <p class="ajuda">A pasta de encerrados é criada dentro da pasta dos contratos, mantendo a mesma estrutura de subpastas.</p>
+        <h4 style="margin:14px 0 6px;font-size:13px">Pastas que NÃO entram na análise</h4>
+        <div class="lista-checks" id="listaIgnoradas"></div>
+      </div>
+      <div class="cartao">
+        <h3>Regras</h3>
+        <div class="form-grade">
+          <label>Status que são “empresa nossa”</label>
+          <div id="listaStatus" style="display:flex;gap:12px;flex-wrap:wrap"></div>
+          <label for="cLimite">Confiança mínima (nome)</label><input type="number" id="cLimite" min="50" max="100" style="width:90px">
+          <label for="cLimiteRev">Mínimo para “Revisar”</label><input type="number" id="cLimiteRev" min="30" max="100" style="width:90px">
+          <label for="cCnpjs">CNPJs da própria Alfa</label><textarea id="cCnpjs" placeholder="Um por linha"></textarea>
+        </div>
+        <p class="ajuda">Os CNPJs da Alfa aparecem como CONTRATADA nos contratos e são ignorados na identificação.</p>
+      </div>
+    </div>
+    <div style="margin-top:14px;display:flex;gap:8px">
+      <button class="btn pri" id="btnSalvarConfig">Salvar configurações e reanalisar</button>
+    </div>
+  </section>
+<!-- ======================= CONTRATOS ANTIGOS ======================= -->
+  <section class="secao" id="sec-antigos">
+    <h2>Contratos Antigos</h2>
+    <p class="sub">Contratos da pasta que ainda não estão no modelo novo — <b>os mais antigos aparecem primeiro</b>.</p>
+    <div class="grade g-kpi" id="kpisAntigos" style="margin-bottom:14px"></div>
+    <div class="filtros">
+      <div class="campo cresce"><label for="anBusca">Buscar (arquivo ou empresa)</label><input type="search" id="anBusca" placeholder="Digite para filtrar..."></div>
+      <div class="campo"><label for="anFiltro">Mostrar</label>
+        <select id="anFiltro">
+          <option value="">Todos os antigos</option>
+          <option value="sem_novo">Só empresas que ainda não têm contrato novo</option>
+          <option value="com_novo">Só empresas que já têm contrato novo</option>
+          <option value="nossas">Só empresas nossas (ativas no Contask)</option>
+        </select></div>
+      <div class="campo"><label for="anOrdem">Ordem</label>
+        <select id="anOrdem"><option value="asc">Mais antigos primeiro</option><option value="desc">Mais recentes primeiro</option></select></div>
+      <label class="check"><input type="checkbox" id="anEncerrados"> <span>Incluir os de Contratos Encerrados</span></label>
+    </div>
+    <div class="barra-lote" id="barraAntigos">
+      <b id="anQtd">0 selecionados</b>
+      <button class="btn" id="anGerarLote">📄 Gerar no novo modelo</button>
+      <button class="btn" id="anLimparSel" style="margin-left:auto">Limpar seleção</button>
+    </div>
+    <div class="tabela-wrap">
+      <table><thead><tr>
+        <th class="sem-ord"><input type="checkbox" id="anSelTodos"></th>
+        <th class="sem-ord">Data do arquivo</th><th class="sem-ord">Idade</th><th class="sem-ord">Arquivo</th>
+        <th class="sem-ord">Empresa</th><th class="sem-ord">Contrato novo?</th><th class="sem-ord">Ações</th>
+      </tr></thead><tbody id="corpoAntigos"></tbody></table>
+      <div class="rodape-tabela" id="rodapeAntigos"></div>
+    </div>
+  </section>
+
+  <!-- ======================= CONTRATOS NOVOS ======================= -->
+  <section class="secao" id="sec-novos">
+    <h2>Contratos Novos</h2>
+    <p class="sub">Contratos feitos no modelo novo (Trivium) — os mais recentes primeiro.</p>
+    <div class="grade g-kpi" id="kpisNovos" style="margin-bottom:14px"></div>
+    <div class="filtros">
+      <div class="campo cresce"><label for="noBusca">Buscar (empresa, arquivo, usuário)</label><input type="search" id="noBusca" placeholder="Digite para filtrar..."></div>
+      <div class="campo"><label for="noModelo">Modelo</label>
+        <select id="noModelo"><option value="">Todos</option><option value="contabil">Contábil</option><option value="locacao">Aluguel</option></select></div>
+      <button class="btn pri" id="noNovo">+ Novo contrato</button>
+    </div>
+    <!-- o formulário aparece aqui ao clicar em "Editar" num contrato da lista -->
+    <div id="slotNovos" style="margin-bottom:16px"></div>
+    <div class="tabela-wrap">
+      <table><thead><tr>
+        <th class="sem-ord">Gerado em</th><th class="sem-ord">Empresa</th><th class="sem-ord">Modelo</th><th class="sem-ord">Arquivos</th>
+        <th class="sem-ord">Por</th><th class="sem-ord">Substituiu</th><th class="sem-ord">Situação</th>
+      </tr></thead><tbody id="corpoNovos"></tbody></table>
+      <div class="rodape-tabela" id="rodapeNovos"></div>
+    </div>
+  </section>
+
+<!-- ======================= TERMOS ADITIVOS ======================= -->
+  <section class="secao" id="sec-aditivos">
+    <h2>Termos Aditivos</h2>
+    <p class="sub">Gere termos aditivos no modelo atual ou edite o texto do modelo — para atualizar o contrato dos clientes antigos às condições atuais.</p>
+
+    <div class="grade g-2" id="cartoesAditivo"></div>
+    <!-- o formulário de geração e o editor do modelo aparecem aqui quando o modelo é o Termo Aditivo -->
+    <div id="slotAditivo"></div>
+
+    <div class="grade g-kpi" id="kpisAditivos" style="margin:16px 0 14px"></div>
+    <div class="filtros">
+      <div class="campo cresce"><label for="adBusca">Buscar (empresa, arquivo, usuário)</label><input type="search" id="adBusca" placeholder="Digite para filtrar..."></div>
+    </div>
+
+    <div class="cartao" style="margin-bottom:16px">
+      <h3>Termos aditivos gerados <span class="dir mini" id="adQtd"></span></h3>
+      <div class="tabela-wrap" style="box-shadow:none;max-height:420px">
+        <table><thead><tr>
+          <th class="sem-ord">Gerado em</th><th class="sem-ord">Empresa</th><th class="sem-ord">Arquivos</th>
+          <th class="sem-ord">Por</th><th class="sem-ord">Contrato antigo</th><th class="sem-ord">Situação</th>
+        </tr></thead><tbody id="corpoAditivos"></tbody></table>
+      </div>
+    </div>
+
+    <div class="cartao">
+      <h3>Clientes com contrato antigo que ainda não têm termo aditivo <span class="dir mini" id="adPendQtd"></span></h3>
+      <p class="mini" style="margin-top:-6px">Os mais antigos primeiro. Clique em “Gerar” para fazer o termo aditivo já preenchido.</p>
+      <div class="barra-lote" id="barraAditivos">
+        <b id="adSelQtd">0 selecionados</b>
+        <button class="btn" id="adGerarLote">📝 Gerar termos aditivos</button>
+        <button class="btn" id="adLimparSel" style="margin-left:auto">Limpar seleção</button>
+      </div>
+      <div class="tabela-wrap" style="box-shadow:none;max-height:520px">
+        <table><thead><tr>
+          <th class="sem-ord"><input type="checkbox" id="adSelTodos"></th><th class="sem-ord">Data do contrato</th><th class="sem-ord">Idade</th>
+          <th class="sem-ord">Contrato antigo</th><th class="sem-ord">Empresa</th><th class="sem-ord"></th>
+        </tr></thead><tbody id="corpoAdPendentes"></tbody></table>
+      </div>
+    </div>
+  </section>
+
+<!-- ======================= COBRANÇA / TERMOS DE ACORDO ======================= -->
+  <section class="secao" id="sec-cobranca">
+    <h2>Cobrança / Termos de Acordo</h2>
+    <p class="sub">Clientes em atraso, em quatro passos: <b>1. Cobrança</b> → <b>2. Notificação de suspensão</b> → <b>3. Notificação extrajudicial</b> → <b>4. Termo de acordo</b>.
+      Os documentos saem no padrão Alfa (Word e PDF) e ficam na pasta <b>Cobranças e Acordos</b>.</p>
+
+    <div class="cob-fluxo" id="cartoesCobranca"></div>
+    <!-- o formulário de geração e o editor do modelo aparecem aqui quando o modelo é de cobrança -->
+    <div id="slotCobranca"></div>
+
+    <div class="grade g-kpi" id="kpisCobranca" style="margin:16px 0 14px"></div>
+
+    <div class="cartao" style="margin-bottom:16px">
+      <h3>Acompanhamento por cliente <span class="dir mini" id="cobCliQtd"></span></h3>
+      <p class="mini" style="margin-top:-6px">Em que passo cada cliente está. O botão do próximo passo já abre o documento preenchido com os dados do anterior.</p>
+      <div class="filtros">
+        <div class="campo cresce"><label for="cobBusca">Buscar (empresa ou CNPJ)</label><input type="search" id="cobBusca" placeholder="Digite para filtrar..."></div>
+        <div class="campo"><label for="cobEtapa">Etapa</label>
+          <select id="cobEtapa">
+            <option value="">Todas</option>
+            <option value="cobranca">1. Cobrados (aguardando retorno)</option>
+            <option value="prazo">1. Cobrados há mais de 5 dias, sem retorno</option>
+            <option value="suspensao">2. Serviços suspensos</option>
+            <option value="notificacao">3. Notificados (extrajudicial)</option>
+            <option value="notif_prazo">3. Notificados com prazo vencido</option>
+            <option value="acordo">4. Em acordo</option>
+          </select></div>
+        <button class="btn" id="cobAbrirPasta">📂 Abrir pasta Cobranças e Acordos</button>
+      </div>
+      <div class="tabela-wrap" style="box-shadow:none;max-height:520px">
+        <table><thead><tr>
+          <th class="sem-ord">Cliente</th><th class="sem-ord">Débito</th><th class="sem-ord">1. Cobrança</th>
+          <th class="sem-ord">2. Suspensão</th><th class="sem-ord">3. Notificação</th><th class="sem-ord">4. Acordo</th><th class="sem-ord">Situação</th><th class="sem-ord">Próximo passo</th>
+        </tr></thead><tbody id="corpoCobClientes"></tbody></table>
+      </div>
+    </div>
+
+    <div class="cartao">
+      <h3>Documentos emitidos <span class="dir mini" id="cobDocQtd"></span></h3>
+      <div class="filtros" style="margin-top:4px">
+        <div id="cobTipos" style="display:flex;gap:6px;flex-wrap:wrap"></div>
+      </div>
+      <div class="tabela-wrap" style="box-shadow:none;max-height:520px">
+        <table><thead><tr>
+          <th class="sem-ord">Gerado em</th><th class="sem-ord">Documento</th><th class="sem-ord">Cliente</th><th class="sem-ord">Valor</th>
+          <th class="sem-ord">Arquivos</th><th class="sem-ord">Por</th><th class="sem-ord">Situação</th>
+        </tr></thead><tbody id="corpoCobDocs"></tbody></table>
+      </div>
+    </div>
+  </section>
+
+<!-- ======================= RESCISÃO / DISTRATO ======================= -->
+  <section class="secao" id="sec-encerramento">
+    <h2>Rescisão / Distrato</h2>
+    <p class="sub">Encerramento do contrato: <b>Notificação de rescisão</b> (a Alfa avisa que encerra o contrato numa data) e <b>Distrato</b> (as partes encerram o contrato em comum acordo). Os documentos saem no padrão Alfa (Word e PDF) e ficam na pasta <b>Cobranças e Acordos</b>.</p>
+
+      <div class="grade g-2" id="cartoesEnc"></div>
+      <div id="slotEnc"></div>
+      <div class="grade g-kpi" id="kpisEnc" style="margin:16px 0 14px"></div>
+      <div class="cartao" style="margin-bottom:16px">
+        <h3>Contratos em encerramento <span class="dir mini" id="encCliQtd"></span></h3>
+        <p class="mini" style="margin-top:-6px">Clientes com notificação de rescisão ou distrato. O botão “Fazer distrato” já abre o documento preenchido.</p>
+        <div class="filtros">
+          <div class="campo cresce"><label for="encBusca">Buscar (empresa ou CNPJ)</label><input type="search" id="encBusca" placeholder="Digite para filtrar..."></div>
+          <div class="campo"><label for="encEtapa">Situação</label>
+            <select id="encEtapa">
+              <option value="">Todas</option>
+              <option value="aviso">Em aviso prévio (ainda não encerrou)</option>
+              <option value="semdistrato">Encerrados sem distrato</option>
+              <option value="distrato">Com distrato</option>
+            </select></div>
+        </div>
+        <div class="tabela-wrap" style="box-shadow:none;max-height:520px">
+          <table><thead><tr>
+            <th class="sem-ord">Cliente</th><th class="sem-ord">Rescisão notificada</th><th class="sem-ord">Encerramento</th>
+            <th class="sem-ord">Distrato</th><th class="sem-ord">Situação</th><th class="sem-ord">Próximo passo</th>
+          </tr></thead><tbody id="corpoEncClientes"></tbody></table>
+        </div>
+      </div>
+      <div class="cartao">
+        <h3>Documentos emitidos <span class="dir mini" id="encDocQtd"></span></h3>
+        <div class="tabela-wrap" style="box-shadow:none;max-height:520px">
+          <table><thead><tr>
+            <th class="sem-ord">Gerado em</th><th class="sem-ord">Documento</th><th class="sem-ord">Cliente</th><th class="sem-ord">Encerramento</th>
+            <th class="sem-ord">Arquivos</th><th class="sem-ord">Por</th><th class="sem-ord">Situação</th>
+          </tr></thead><tbody id="corpoEncDocs"></tbody></table>
+        </div>
+      </div>
+      </section>
+
+<!-- ======================= PROPOSTAS ======================= -->
+  <section class="secao" id="sec-propostas">
+    <h2>Propostas</h2>
+    <p class="sub">Propostas comerciais no padrão Alfa (Word e PDF): <b>Auditoria</b>, <b>Lucro Presumido mensal</b>, <b>Diagnóstico Fiscal</b> e <b>Simples Nacional mensal</b>. O nº da proposta segue a sequência do ano e os arquivos ficam na pasta <b>Propostas</b>.</p>
+
+    <div class="grade g-2" id="cartoesProp"></div>
+    <div id="slotProp"></div>
+    <div class="cartao" style="margin-top:16px">
+      <h3>Propostas emitidas <span class="dir mini" id="propDocQtd"></span></h3>
+      <div class="filtros">
+        <div class="campo cresce"><label for="propBusca">Buscar (cliente, CNPJ ou nº)</label><input type="search" id="propBusca" placeholder="Digite para filtrar..."></div>
+      </div>
+      <div class="chips" id="propTipos" style="margin-bottom:10px"></div>
+      <div class="tabela-wrap" style="box-shadow:none;max-height:520px">
+        <table><thead><tr>
+          <th class="sem-ord">Gerada em</th><th class="sem-ord">Nº</th><th class="sem-ord">Proposta</th><th class="sem-ord">Cliente</th>
+          <th class="sem-ord">Valor</th><th class="sem-ord">Arquivos</th><th class="sem-ord">Por</th><th class="sem-ord">Situação</th>
+        </tr></thead><tbody id="corpoPropDocs"></tbody></table>
+      </div>
+    </div>
+  </section>
+
+<!-- ======================= MODELOS DE CONTRATO ======================= -->
+  <section class="secao" id="sec-modelos">
+    <h2>Modelos de Contrato</h2>
+    <p class="sub">Gere contratos novos no modelo atual (baseado no contrato da Trivium) ou edite o texto dos modelos.</p>
+
+    <div class="grade g-2" id="cartoesModelos"></div>
+
+    <div id="slotModelos">
+    <!-- ---------- gerar ---------- -->
+    <div id="painelGerar" class="mod-area" style="display:none">
+      <div class="mod-col-form cartao">
+        <h3 id="gerTitulo">Gerar contrato</h3>
+        <div id="gerOrigem"></div>
+        <div class="campo" style="margin-bottom:12px">
+          <label for="gerEmpresa">Buscar empresa no Contask (preenche razão social e CNPJ)</label>
+          <div class="busca-emp"><input type="search" id="gerEmpresa" placeholder="Digite nome, nº ou CNPJ..."><div class="sugestoes" id="gerSug"></div></div>
+        </div>
+        <div id="gerCampos" class="mod-campos"></div>
+        <div id="gerFaltando"></div>
+        <div class="ajuda" id="gerNomeArq"></div>
+        <label class="check" style="margin-top:10px"><input type="checkbox" id="gerComPdf" checked> <span>Salvar também uma cópia em <b>PDF</b> na pasta</span></label>
+        <label class="check" style="margin-top:4px"><input type="checkbox" id="gerSemAssin"> <span><b>Sem quadro de assinaturas</b> — tira as linhas, os nomes e as testemunhas do final (ex.: para assinar pelo Autentique)</span></label>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">
+          <button class="btn pri" id="btnGerar">📄 Gerar contrato</button>
+          <button class="btn" id="btnBaixarPdf" title="Baixa o PDF no seu computador sem salvar nada na pasta">⬇ Baixar PDF</button>
+          <button class="btn" id="btnGerLimpar">Limpar</button>
+          <button class="btn" id="btnGerFechar">Fechar</button>
+        </div>
+      </div>
+      <div class="mod-col-previa">
+        <div class="mini" style="margin-bottom:6px">Prévia — campos preenchidos em <span class="pv-campo">azul</span>, faltando em <span class="pv-falta">amarelo</span></div>
+        <div class="papel" id="gerPrevia"></div>
+      </div>
+    </div>
+
+    <!-- ---------- editar ---------- -->
+    <div id="painelEditar" class="mod-area" style="display:none">
+      <div class="mod-col-form cartao">
+        <h3 id="edTitulo">Editar modelo</h3>
+        <div class="aviso info" style="margin-bottom:10px">
+          <b>Como editar:</b> deixe <b>uma linha em branco</b> entre parágrafos.
+          <code># Título</code> centraliza · <code>## Seção</code> título de seção · <code>**texto**</code> negrito ·
+          <code>{{CAMPO}}</code> valor do formulário · <code>[[ASSINATURAS]]</code> quadro de assinaturas ·
+          <code>| texto | valor |</code> quadro com bordas (uma linha por linha do quadro, sem linha em branco entre elas) ·
+          <code>&gt;&gt; texto</code> alinha à direita · <code>?? texto</code> parágrafo que some se o campo dele estiver vazio ·
+          <code>[[PARCELAS]]</code> cronograma de parcelas (termo de acordo) · <code>[[PRECO]]</code> quadro de horas e preço (proposta de auditoria).
+          Todo campo em dinheiro tem também <code>{{CAMPO_EXTENSO}}</code> (valor por extenso).
+          Números de cláusula (1.1., 2 -) e “CLÁUSULA …:” ficam em negrito sozinhos.
+        </div>
+        <div class="ed-barra">
+          <button class="btn peq" id="edNegrito"><b>N</b> Negrito</button>
+          <button class="btn peq" id="edSecao">## Seção</button>
+          <button class="btn peq" id="edAssin">Assinaturas</button>
+          <span class="mini" style="margin-left:6px">Inserir campo:</span>
+          <span id="edChips"></span>
+        </div>
+        <textarea id="edTexto" spellcheck="true"></textarea>
+        <h4 style="margin:14px 0 6px;font-size:13px">Campos do formulário</h4>
+        <div class="tabela-wrap" style="max-height:260px;box-shadow:none">
+          <table class="ed-tab"><thead><tr><th class="sem-ord">Código</th><th class="sem-ord">Nome no formulário</th><th class="sem-ord">Valor padrão</th>
+            <th class="sem-ord">Tipo</th><th class="sem-ord">Obrig.</th><th class="sem-ord"></th></tr></thead>
+            <tbody id="edCampos"></tbody></table>
+        </div>
+        <button class="btn peq" id="edAddCampo" style="margin-top:8px">+ Adicionar campo</button>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+          <button class="btn pri" id="btnEdSalvar">Salvar modelo</button>
+          <button class="btn" id="btnEdCancelar">Cancelar</button>
+          <button class="btn" id="btnEdRestaurar" style="margin-left:auto">Restaurar original (Trivium)</button>
+        </div>
+      </div>
+      <div class="mod-col-previa">
+        <div class="mini" style="margin-bottom:6px">Prévia com dados de exemplo</div>
+        <div class="papel" id="edPrevia"></div>
+      </div>
+    </div>
+    </div><!-- /slotModelos -->
+
+    <div class="cartao" style="margin-top:16px">
+      <h3>Contratos gerados</h3>
+      <div class="tabela-wrap" style="max-height:340px;box-shadow:none">
+        <table><thead><tr><th class="sem-ord">Data</th><th class="sem-ord">Usuário</th><th class="sem-ord">Modelo</th><th class="sem-ord">Empresa</th>
+          <th class="sem-ord">Arquivo</th><th class="sem-ord">Observação</th></tr></thead><tbody id="corpoGerados"></tbody></table>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape-app">
+  <img src="/api/modelos/logo" alt="">
+  <div><b>Alfa Contabilidade e Auditoria</b><br>
+    <span>Sistema de Gestão de Contratos · Telefone (61) 4000-0000 · www.alfacontabil.example</span></div>
+</footer>
+
+<!-- gaveta de detalhes -->
+<div class="fundo" id="fundo"></div>
+<aside class="gaveta" id="gaveta" aria-hidden="true">
+  <div class="gaveta-topo"><h3 id="gTitulo"></h3><button class="fechar" id="gFechar" aria-label="Fechar">×</button></div>
+  <div class="gaveta-corpo" id="gCorpo"></div>
+  <div class="gaveta-rodape" id="gRodape"></div>
+</aside>
+
+<!-- modal de confirmação -->
+<div class="modal" id="modal">
+  <div class="modal-caixa">
+    <h3 id="mTitulo"></h3>
+    <div class="modal-corpo" id="mCorpo"></div>
+    <div class="modal-rodape"><button class="btn" id="mCancelar">Cancelar</button><button class="btn pri" id="mOk">Confirmar</button></div>
+  </div>
+</div>
+
+<div class="toasts" id="toasts"></div>
+<script src="app.js"></script>
+</body>
+</html>

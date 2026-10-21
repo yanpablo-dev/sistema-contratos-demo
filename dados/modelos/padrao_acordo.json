@@ -1,0 +1,131 @@
+{
+ "id": "acordo",
+ "nome": "Termo de Acordo para Quitação de Débito",
+ "descricao": "3º passo: formaliza o parcelamento do débito, com entrada opcional e cronograma de parcelas.",
+ "mostrar_numero": false,
+ "nome_arquivo": "{{RAZAO_SOCIAL}} - Termo de Acordo de Quitação de Débito ({{DATA_ASSINATURA}})",
+ "campos": [
+  {
+   "chave": "CONTRATADA",
+   "rotulo": "Empresa Alfa do contrato",
+   "padrao": "ALFA SERVIÇOS CONTÁBEIS LTDA"
+  },
+  {
+   "chave": "CNPJ_CONTRATADA",
+   "rotulo": "CNPJ da empresa Alfa",
+   "padrao": "11.222.333/0001-81"
+  },
+  {
+   "chave": "REPRESENTANTE_CONTRATADA",
+   "rotulo": "Administrador que assina pela Alfa",
+   "padrao": "JOÃO DA SILVA EXEMPLO"
+  },
+  {
+   "chave": "RAZAO_SOCIAL",
+   "rotulo": "Razão social do cliente",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "CNPJ",
+   "rotulo": "CNPJ do cliente",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "ENDERECO",
+   "rotulo": "Endereço da empresa (sede)",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "REPRESENTANTE",
+   "rotulo": "Nome do representante legal",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "CPF",
+   "rotulo": "CPF do representante",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "PERIODO_DEBITO",
+   "rotulo": "A que se refere o débito",
+   "padrao": "honorários contábeis em aberto",
+   "obrigatorio": true
+  },
+  {
+   "chave": "VALOR_DEBITO",
+   "rotulo": "Valor total do débito (R$)",
+   "padrao": "",
+   "tipo": "dinheiro",
+   "obrigatorio": true
+  },
+  {
+   "chave": "DATA_ATUALIZACAO",
+   "rotulo": "Débito atualizado até",
+   "padrao": "",
+   "tipo": "data",
+   "obrigatorio": true
+  },
+  {
+   "chave": "VALOR_ENTRADA",
+   "rotulo": "Entrada (R$) — deixe vazio se não houver",
+   "padrao": "",
+   "tipo": "dinheiro"
+  },
+  {
+   "chave": "DATA_ENTRADA",
+   "rotulo": "Data de pagamento da entrada",
+   "padrao": "",
+   "tipo": "data"
+  },
+  {
+   "chave": "QTD_PARCELAS",
+   "rotulo": "Quantidade de parcelas",
+   "padrao": "",
+   "tipo": "numero",
+   "obrigatorio": true
+  },
+  {
+   "chave": "VALOR_PARCELA",
+   "rotulo": "Valor de cada parcela (R$) — vazio = calcula sozinho",
+   "padrao": "",
+   "tipo": "dinheiro"
+  },
+  {
+   "chave": "DATA_PRIMEIRA_PARCELA",
+   "rotulo": "Vencimento da 1ª parcela",
+   "padrao": "",
+   "tipo": "data",
+   "obrigatorio": true
+  },
+  {
+   "chave": "PRAZO_TOLERANCIA",
+   "rotulo": "Atraso tolerado antes de rescindir o acordo (dias úteis — ex.: 5 ou 10)",
+   "padrao": "5",
+   "tipo": "numero",
+   "obrigatorio": true
+  },
+  {
+   "chave": "DATA_ASSINATURA",
+   "rotulo": "Data do documento",
+   "padrao": "",
+   "tipo": "data_extenso"
+  }
+ ],
+ "texto": "# TERMO DE ACORDO PARA QUITAÇÃO DE DÉBITO\n\nCONTRATADA: **{{CONTRATADA}}**, pessoa jurídica de direito privado, inscrita no CNPJ sob o nº {{CNPJ_CONTRATADA}}, com sede na Av. Exemplo, 1000, Sala 101, Centro, Brasília/DF, CEP 70.000-000, neste ato representada por seu administrador, **{{REPRESENTANTE_CONTRATADA}}**.\n\nCONTRATANTE: **{{RAZAO_SOCIAL}}**, inscrita no CNPJ sob o nº {{CNPJ}}, com sede em {{ENDERECO}}, neste ato representada por **{{REPRESENTANTE}}**, inscrito(a) no CPF sob o nº {{CPF}}.\n\nAs partes acima identificadas têm entre si, justo e acordado, o presente Termo de Acordo para Quitação de Débito, nas seguintes condições:\n\n## 1. - DO CONTRATO\n\n1.1. As partes celebraram contrato de prestação de serviços de contabilidade, no qual figuram como CONTRATADA a empresa {{CONTRATADA}} e como CONTRATANTE a empresa {{RAZAO_SOCIAL}}.\n\n## 2. - DO DÉBITO\n\n2.1. A CONTRATANTE deixou de pagar os valores devidos em razão do referido contrato, referentes a {{PERIODO_DEBITO}}.\n\n2.2. O débito da CONTRATANTE, devidamente atualizado até {{DATA_ATUALIZACAO}}, é de **R$ {{VALOR_DEBITO}} ({{VALOR_DEBITO_EXTENSO}})**, valor que a CONTRATANTE reconhece como líquido, certo e exigível.\n\n## 3. - DA FORMA DE PAGAMENTO\n\n3.1. Com o intuito de compor amigavelmente o débito, a CONTRATANTE se obriga a pagar à CONTRATADA a quantia de R$ {{VALOR_DEBITO}} ({{VALOR_DEBITO_EXTENSO}}), {{FORMA_PAGAMENTO}}.\n\n3.2. Os pagamentos obedecerão ao seguinte cronograma:\n\n[[PARCELAS]]\n\n## 4. - DA QUITAÇÃO\n\n4.1. Efetuado o pagamento da totalidade do débito e cumpridas todas as obrigações acordadas neste instrumento, operar-se-á, automaticamente, plena, geral, rasa e irrevogável quitação das obrigações financeiras oriundas do referido contrato relativas ao débito descrito na cláusula 2.\n\n## 5. - DO INADIMPLEMENTO\n\n5.1. Em caso de inadimplência de qualquer das parcelas ora acordadas por prazo superior a {{PRAZO_TOLERANCIA}} dias úteis, o presente acordo ficará rescindido automaticamente, com o vencimento antecipado das demais parcelas, podendo a CONTRATADA executá-lo extrajudicial ou judicialmente, nos termos da lei.\n\nE, por estarem de pleno e comum acordo, as partes assinam o presente Termo em 2 (duas) vias de igual teor e para um só efeito, na presença de 02 (duas) testemunhas.\n\nBrasília/DF, {{DATA_ASSINATURA}}.",
+ "assinaturas": [
+  [
+   "{{CONTRATADA}}",
+   "CONTRATADA"
+  ],
+  [
+   "{{RAZAO_SOCIAL}}",
+   "CONTRATANTE"
+  ]
+ ],
+ "testemunhas": true
+}

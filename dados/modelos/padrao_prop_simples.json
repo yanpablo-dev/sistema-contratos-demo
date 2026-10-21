@@ -1,0 +1,75 @@
+{
+ "id": "prop_simples",
+ "nome": "Proposta de Serviços Contábeis – Simples Nacional (mensal)",
+ "descricao": "Gestão contábil e prestação de contas, área fiscal e gestão financeira/cobrança, com honorário mensal.",
+ "mostrar_numero": true,
+ "rotulo_numero": "PROPOSTA Nº",
+ "campo_numero": "NUMERO_PROPOSTA",
+ "nome_arquivo": "{{RAZAO_SOCIAL}} - Proposta Simples Nacional ({{NUMERO_PROPOSTA}})",
+ "campos": [
+  {
+   "chave": "NUMERO_PROPOSTA",
+   "rotulo": "Nº da proposta (ex.: 047 / 2026)",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "RAZAO_SOCIAL",
+   "rotulo": "Cliente (razão social ou nome)",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "CNPJ",
+   "rotulo": "CNPJ do cliente (se tiver)",
+   "padrao": ""
+  },
+  {
+   "chave": "AOS_CUIDADOS",
+   "rotulo": "A/C (pessoa de contato)",
+   "padrao": ""
+  },
+  {
+   "chave": "VALOR",
+   "rotulo": "Honorário mensal (R$)",
+   "padrao": "",
+   "tipo": "dinheiro",
+   "obrigatorio": true
+  },
+  {
+   "chave": "VALIDADE_DIAS",
+   "rotulo": "Validade da proposta (dias)",
+   "padrao": "15",
+   "tipo": "numero"
+  },
+  {
+   "chave": "CONTATO",
+   "rotulo": "Telefone / contato para esclarecimentos",
+   "padrao": "(61) 4000-0000"
+  },
+  {
+   "chave": "CONTRATADA",
+   "rotulo": "Empresa Alfa da proposta",
+   "padrao": "ALFA SERVIÇOS CONTÁBEIS LTDA"
+  },
+  {
+   "chave": "CNPJ_CONTRATADA",
+   "rotulo": "CNPJ da empresa Alfa",
+   "padrao": "11.222.333/0001-81"
+  },
+  {
+   "chave": "DATA_ASSINATURA",
+   "rotulo": "Data da proposta",
+   "padrao": "",
+   "tipo": "data_extenso"
+  }
+ ],
+ "assinaturas": [
+  [
+   "{{CONTRATADA}}",
+   "Proponente"
+  ]
+ ],
+ "testemunhas": false,
+ "texto": "# PROPOSTA COMERCIAL DE SERVIÇOS CONTÁBEIS\n\n**Ao(À) {{RAZAO_SOCIAL}}**\n\n?? **CNPJ:** {{CNPJ}}\n\n?? **A/C:** {{AOS_CUIDADOS}}\n\nAtendendo solicitação de V. Sas., temos o prazer e a honra de submeter à vossa apreciação a presente proposta para prestação de serviços contábeis.\n\nInformamos que nossos serviços são efetuados de acordo com as normas brasileiras de contabilidade e por profissionais qualificados, e nossa prática é estender nossos trabalhos, revisando as rotinas contábeis de cada empresa. A esse respeito, poderemos sugerir melhorias, sistemas mais eficientes de controle de documentos ou impostos, simplificações ou, ainda, reforço nos controles internos de sua empresa.\n\nAproveitamos o ensejo para agradecer a oportunidade que nos foi concedida de apresentarmos a presente proposta e subscrevemo-nos.\n\n## APRESENTAÇÃO DA ALFA\n\n**{{CONTRATADA}}**, localizada na Av. Exemplo, 1000, Sala 101, Centro, Brasília/DF, CEP 70.000-000, devidamente registrada na Junta Comercial do Distrito Federal e inscrita no CNPJ sob o nº {{CNPJ_CONTRATADA}}, empresa constituída em 09.11.1998, é responsável pela contabilidade de empresas ligadas a atividades e objetivos múltiplos, cujos diretores cultivam, além da vivência e do conhecimento, uma notável credibilidade junto aos seus clientes, parceiros e órgãos fiscalizadores.\n\nA ALFA tem como objetivo principal a gestão contábil de seus clientes, aplicando, da melhor forma, a dinâmica destes conhecimentos junto a eles e levando informações importantes para a tomada de decisões. A empresa executa, de forma digna, correta e com muita ética profissional, os trabalhos confiados a seu cargo, estando hoje atuando em todo o Brasil. Dentre seus clientes podemos destacar empresas de diversos setores econômicos, tais como os setores bancário e financeiro e pequenas e médias empresas do comércio varejista e atacadista.\n\n**Missão:** fornecer soluções em contabilidade e consultoria, almejando a satisfação dos nossos clientes através da qualidade dos serviços, aprimorando conhecimentos tecnológicos e a qualificação profissional dos seus colaboradores, visando o mercado da competitividade e lucratividade, ciente de suas responsabilidades sociais, tendo como propósito a busca de melhorias.\n\n**Visão:** ser reconhecida como a empresa brasileira mais eficiente na solução de infraestrutura de serviços contábeis, com alto comprometimento de geração de valor.\n\n**Valores:** responsabilidade social, ética nos negócios, qualidade dos serviços prestados, alto padrão de comprometimento com o cliente, investimentos sérios nos colaboradores e nas inovações da empresa.\n\n## 1. - DO OBJETO\n\nApresentar uma proposta comercial para prestação de serviços contábeis, sugerir melhorias, sistemas mais eficientes de controle de documentos ou impostos, simplificações ou, ainda, reforço nos controles internos de sua empresa, conforme abaixo especificado.\n\n## 2. - DESCRIÇÃO DOS SERVIÇOS\n\n## GESTÃO CONTÁBIL E PRESTAÇÃO DE CONTAS:\n\n2.1.1. Classificação e escrituração contábil conforme as normas vigentes.\n\n2.1.2. Elaboração do balancete mensal detalhado (receitas x despesas).\n\n2.1.3. Montagem da pasta de prestação de contas mensal para conferência e visto do Conselho Consultivo/Fiscal.\n\n2.1.4. Controle do fundo de reserva, do fundo de obras e de outras provisões específicas.\n\n2.1.5. Emissão dos livros Diário e Razão Geral.\n\n## ÁREA FISCAL E TRIBUTÁRIA:\n\n2.2.1. Orientação e controle das retenções de impostos sobre serviços tomados (ISS, INSS, PIS/COFINS/CSLL).\n\n2.2.2. Emissão de guias de recolhimento dos impostos retidos de fornecedores.\n\n2.2.3. Atendimento às obrigações acessórias (DIRF, EFD-Reinf, DCTFWeb).\n\n## GESTÃO FINANCEIRA E COBRANÇA:\n\n2.3.1. Emissão de boletos bancários com demonstrativo de despesas impresso no corpo do documento.\n\n2.3.2. Relatório de inadimplência atualizado para acompanhamento do síndico.\n\n2.3.3. Envio de notificações de cobrança amigáveis (extrajudiciais).\n\n## 3. - FORMAS DE TRABALHO\n\nTodo o trabalho será realizado em nossa sede, a partir da apresentação, pela atual diretoria, dos documentos contábeis, demais documentos comprobatórios e de controles gerenciais existentes no dia da aceitação desta proposta.\n\nOs serviços descritos poderão ser efetuados na sede da CONTRATANTE, por um colaborador da Alfa, podendo alguns serviços ser realizados na sede da CONTRATADA.\n\n## 4. - HONORÁRIOS DOS SERVIÇOS\n\nHonorários mensais: **R$ {{VALOR}}** ({{VALOR_EXTENSO}}).\n\nApós o aceite da presente proposta, será redigido um contrato de prestação de serviços entre as partes.\n\n## 5. - DISPOSIÇÕES GERAIS\n\nEsta proposta tem a validade de {{VALIDADE_DIAS}} dias corridos a partir da data de sua emissão.\n\nA {{CONTRATADA}} fica à disposição para maiores esclarecimentos que não tenham sido aqui expostos, pessoalmente ou pelo telefone {{CONTATO}}, e ainda na sede da empresa.\n\nAtenciosamente,\n\n>> Brasília/DF, {{DATA_ASSINATURA}}.\n\n[[ASSINATURAS]]"
+}

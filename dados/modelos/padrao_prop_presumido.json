@@ -1,0 +1,75 @@
+{
+ "id": "prop_presumido",
+ "nome": "Proposta de Serviços Contábeis – Lucro Presumido (mensal)",
+ "descricao": "Empresas do Lucro Presumido: contábil, fiscal, IRPJ, trabalhista, legalização e assessoria, com honorário mensal.",
+ "mostrar_numero": true,
+ "rotulo_numero": "PROPOSTA Nº",
+ "campo_numero": "NUMERO_PROPOSTA",
+ "nome_arquivo": "{{RAZAO_SOCIAL}} - Proposta Lucro Presumido ({{NUMERO_PROPOSTA}})",
+ "campos": [
+  {
+   "chave": "NUMERO_PROPOSTA",
+   "rotulo": "Nº da proposta (ex.: 047 / 2026)",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "RAZAO_SOCIAL",
+   "rotulo": "Cliente (razão social ou nome)",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "CNPJ",
+   "rotulo": "CNPJ do cliente (se tiver)",
+   "padrao": ""
+  },
+  {
+   "chave": "AOS_CUIDADOS",
+   "rotulo": "A/C (pessoa de contato)",
+   "padrao": ""
+  },
+  {
+   "chave": "VALOR",
+   "rotulo": "Honorário mensal (R$)",
+   "padrao": "",
+   "tipo": "dinheiro",
+   "obrigatorio": true
+  },
+  {
+   "chave": "VALIDADE_DIAS",
+   "rotulo": "Validade da proposta (dias)",
+   "padrao": "15",
+   "tipo": "numero"
+  },
+  {
+   "chave": "CONTATO",
+   "rotulo": "Telefone / contato para esclarecimentos",
+   "padrao": "(61) 4000-0000"
+  },
+  {
+   "chave": "CONTRATADA",
+   "rotulo": "Empresa Alfa da proposta",
+   "padrao": "ALFA CONTABILIDADE E AUDITORIA LTDA"
+  },
+  {
+   "chave": "CNPJ_CONTRATADA",
+   "rotulo": "CNPJ da empresa Alfa",
+   "padrao": "11.444.777/0001-61"
+  },
+  {
+   "chave": "DATA_ASSINATURA",
+   "rotulo": "Data da proposta",
+   "padrao": "",
+   "tipo": "data_extenso"
+  }
+ ],
+ "assinaturas": [
+  [
+   "{{CONTRATADA}}",
+   "Proponente"
+  ]
+ ],
+ "testemunhas": false,
+ "texto": "# PROPOSTA COMERCIAL DE SERVIÇOS CONTÁBEIS\n\n**Ao(À) {{RAZAO_SOCIAL}}**\n\n?? **CNPJ:** {{CNPJ}}\n\n?? **A/C:** {{AOS_CUIDADOS}}\n\nAtendendo solicitação de V. Sas., temos o prazer e a honra de submeter à vossa apreciação a presente proposta para prestação de serviços contábeis.\n\nInformamos que nossos serviços são efetuados de acordo com as normas brasileiras de contabilidade e por profissionais qualificados, e nossa prática é estender nossos trabalhos, revisando as rotinas contábeis de cada empresa. A esse respeito, poderemos sugerir melhorias, sistemas mais eficientes de controle de documentos ou impostos, simplificações ou, ainda, reforço nos controles internos de sua empresa.\n\nAproveitamos o ensejo para agradecer a oportunidade que nos foi concedida de apresentarmos a presente proposta e subscrevemo-nos.\n\n## APRESENTAÇÃO DA ALFA\n\n**{{CONTRATADA}}**, localizada na Av. Exemplo, 1000, Sala 101, Centro, Brasília/DF, CEP 70.000-000, devidamente registrada na Junta Comercial do Distrito Federal e inscrita no CNPJ sob o nº {{CNPJ_CONTRATADA}}, empresa constituída em 09.11.1998, é responsável pela contabilidade de empresas ligadas a atividades e objetivos múltiplos, cujos diretores cultivam, além da vivência e do conhecimento, uma notável credibilidade junto aos seus clientes, parceiros e órgãos fiscalizadores.\n\nA ALFA tem como objetivo principal a gestão contábil de seus clientes, aplicando, da melhor forma, a dinâmica destes conhecimentos junto a eles e levando informações importantes para a tomada de decisões. A empresa executa, de forma digna, correta e com muita ética profissional, os trabalhos confiados a seu cargo, estando hoje atuando em todo o Brasil. Dentre seus clientes podemos destacar empresas de diversos setores econômicos, tais como os setores bancário e financeiro e pequenas e médias empresas do comércio varejista e atacadista.\n\n**Missão:** fornecer soluções em contabilidade e consultoria, almejando a satisfação dos nossos clientes através da qualidade dos serviços, aprimorando conhecimentos tecnológicos e a qualificação profissional dos seus colaboradores, visando o mercado da competitividade e lucratividade, ciente de suas responsabilidades sociais, tendo como propósito a busca de melhorias.\n\n**Visão:** ser reconhecida como a empresa brasileira mais eficiente na solução de infraestrutura de serviços contábeis, com alto comprometimento de geração de valor.\n\n**Valores:** responsabilidade social, ética nos negócios, qualidade dos serviços prestados, alto padrão de comprometimento com o cliente, investimentos sérios nos colaboradores e nas inovações da empresa.\n\n## 1. - DO OBJETO\n\nApresentar uma proposta comercial para prestação de serviços contábeis, sugerir melhorias, sistemas mais eficientes de controle de documentos ou impostos, simplificações ou, ainda, reforço nos controles internos de sua empresa, conforme abaixo especificado.\n\n## 2. - DESCRIÇÃO DOS SERVIÇOS\n\n## ÁREA CONTÁBIL:\n\n2.1.1. Orientação, classificação e escrituração da contabilidade de acordo com as normas e princípios contábeis vigentes.\n\n2.1.2. Elaboração do Balanço Anual.\n\n2.1.3. Balancetes trimestrais.\n\n2.1.4. Demonstração do resultado do exercício.\n\n2.1.5. Demonstrativo de lucros acumulados.\n\n2.1.6. Demonstração de Fluxo de Caixa.\n\n2.1.7. Demonstração das Origens e Recursos.\n\n2.1.8. Controle do limite de distribuição dos lucros.\n\n2.1.9. Demonstração analítica das contas patrimoniais.\n\n2.1.10. Elaboração do SPED Contábil.\n\n## ÁREA FISCAL:\n\n2.2.1. Orientação e controle da aplicação dos dispositivos legais vigentes, federais e tributos estaduais aplicáveis.\n\n2.2.2. Análises e lançamentos por operações de notas fiscais.\n\n2.2.3. Emissão do SPED Fiscal.\n\n2.2.4. Elaboração e emissão de guias de recolhimento (IPI, ICMS, ISS, PIS, COFINS, IRPJ, CSLL).\n\n2.2.5. Escrituração do livro de utilização de documentos fiscais e termos de ocorrência.\n\n2.2.6. Atendimento das demais exigências previstas em atos normativos, bem como de eventuais procedimentos de fiscalização tributária.\n\n## ÁREA DO IMPOSTO DE RENDA PESSOA JURÍDICA:\n\n2.3.1. Orientação e controle de aplicação dos dispositivos legais vigentes.\n\n2.3.2. Elaboração de declarações (DIRF, DCTF, SPED).\n\n2.3.3. Elaboração da declaração anual de rendimentos e documentos correlatos.\n\n2.3.4. Atendimento das demais exigências previstas em atos normativos, bem como de eventuais procedimentos de fiscalização.\n\n## ÁREA TRABALHISTA E PREVIDENCIÁRIA:\n\n2.4.1. Orientação e controle da aplicação dos preceitos da Consolidação das Leis do Trabalho, bem como daqueles atinentes à Previdência Social, IRRF, FGTS e outros aplicáveis às relações de emprego mantidas pela CONTRATANTE.\n\n2.4.2. Registro de funcionários, contrato de experiência e acordo de compensação e prorrogação de horas de trabalho.\n\n2.4.3. Termo de Imposto de Renda e termo de opção ao vale-transporte.\n\n2.4.4. Emissão de recibos de pagamento de salários e adiantamentos e da folha de pagamento por setores.\n\n2.4.5. Emissão da GFIP (FGTS) e das guias de recolhimento do PIS sobre a folha de pagamento e do IRRF.\n\n2.4.6. Emissão da guia de recolhimento da contribuição sindical, assistencial e confederativa (empregados e empregadores).\n\n2.4.7. Rescisão de contrato de trabalho e solicitação de extratos do FGTS.\n\n2.4.8. Emissão de recibos de férias; admissão e elaboração de recibos para estagiários.\n\n2.4.9. Emissão de GPS e IRRF sobre prestação de serviços de autônomos.\n\n2.4.10. Elaboração de declarações (SEFIP, RAIS, CAGED) e informes de rendimentos (pró-labore, autônomos, PJ, aluguéis).\n\n2.4.11. Manutenção dos registros de empregados e serviços correlatos.\n\n2.4.12. Atendimento das demais exigências previstas na legislação, bem como de eventuais procedimentos de fiscalização.\n\n## ÁREA DE LEGALIZAÇÃO DE EMPRESAS, CERTIDÕES E OUTROS:\n\n2.5.1. Retirada de certidões negativas de débitos, certidões de falência ou de protesto de títulos.\n\n2.5.2. Regularização de empresas.\n\n2.5.3. Constituição, alterações e encerramentos de empresas.\n\n2.5.4. Controle e requerimento de certidões negativas em todos os órgãos para fins de licitações ou concorrências.\n\n2.5.5. Inscrição no SICAF.\n\n2.5.6. Parcelamento de débitos nas esferas federal e estadual.\n\n2.5.7. Homologação de rescisão de contrato de trabalho junto ao sindicato ou à Superintendência Regional do Trabalho.\n\n## ASSESSORIA:\n\n2.6.1. Orientação quanto aos procedimentos de devolução, cancelamento e troca nas operações de venda de mercadorias.\n\n2.6.2. Assessoria e assistência, por telefone ou pessoalmente, quanto à emissão de nota fiscal eletrônica.\n\n2.6.3. Assessoria, por telefone ou pessoalmente, nas áreas contábil, fiscal e trabalhista.\n\n## 3. - FORMAS DE TRABALHO\n\nTodo o trabalho será realizado em nossa sede, a partir da apresentação, pela atual diretoria, dos documentos contábeis, demais documentos comprobatórios e de controles gerenciais existentes no dia da aceitação desta proposta.\n\nOs serviços descritos poderão ser efetuados na sede da CONTRATANTE, por um colaborador da Alfa, podendo alguns serviços ser realizados na sede da CONTRATADA.\n\n## 4. - HONORÁRIOS DOS SERVIÇOS\n\nOs honorários contábeis dos serviços aqui descritos serão de **R$ {{VALOR}}** ({{VALOR_EXTENSO}}) mensais.\n\nApós o aceite da presente proposta, será redigido um contrato de prestação de serviços entre as partes.\n\n## 5. - DISPOSIÇÕES GERAIS\n\nEsta proposta tem a validade de {{VALIDADE_DIAS}} dias corridos a partir da data de sua emissão.\n\nA {{CONTRATADA}} fica à disposição para maiores esclarecimentos que não tenham sido aqui expostos, pessoalmente ou pelo telefone {{CONTATO}}, e ainda na sede da empresa.\n\nAtenciosamente,\n\n>> Brasília/DF, {{DATA_ASSINATURA}}.\n\n[[ASSINATURAS]]"
+}

@@ -1,0 +1,108 @@
+{
+ "id": "distrato",
+ "nome": "Distrato de Contrato de Prestação de Serviços Contábeis",
+ "descricao": "Encerra o contrato em comum acordo: responsabilidade técnica, documentos, débitos e LGPD.",
+ "mostrar_numero": false,
+ "nome_arquivo": "{{RAZAO_SOCIAL}} - Distrato de Contrato de Prestação de Serviços Contábeis ({{DATA_ASSINATURA}})",
+ "campos": [
+  {
+   "chave": "RAZAO_SOCIAL",
+   "rotulo": "Razão social do cliente",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "CNPJ",
+   "rotulo": "CNPJ do cliente",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "CARGO_REPRESENTANTE",
+   "rotulo": "Cargo do representante (titular, sócio administrador...)",
+   "padrao": "sócio administrador"
+  },
+  {
+   "chave": "REPRESENTANTE",
+   "rotulo": "Nome do representante legal",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "QUALIFICACAO_REPRESENTANTE",
+   "rotulo": "Qualificação do representante",
+   "padrao": "brasileiro(a), empresário(a)"
+  },
+  {
+   "chave": "CPF",
+   "rotulo": "CPF do representante",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "CONTRATADA",
+   "rotulo": "Empresa Alfa do contrato",
+   "padrao": "ALFA SERVIÇOS CONTÁBEIS LTDA"
+  },
+  {
+   "chave": "CNPJ_CONTRATADA",
+   "rotulo": "CNPJ da empresa Alfa",
+   "padrao": "11.222.333/0001-81"
+  },
+  {
+   "chave": "ENDERECO_CONTRATADA",
+   "rotulo": "Endereço da Alfa",
+   "padrao": "Av. Exemplo, 1000, Sala 101, Centro, Brasília/DF"
+  },
+  {
+   "chave": "DATA_PEDIDO",
+   "rotulo": "Data do pedido de rescisão",
+   "padrao": "",
+   "tipo": "data",
+   "obrigatorio": true
+  },
+  {
+   "chave": "DATA_ENCERRAMENTO",
+   "rotulo": "Alfa responsável até (último dia)",
+   "padrao": "",
+   "tipo": "data",
+   "obrigatorio": true
+  },
+  {
+   "chave": "AVISO_PREVIO",
+   "rotulo": "Aviso prévio (dias)",
+   "padrao": "30",
+   "tipo": "numero"
+  },
+  {
+   "chave": "PRAZO_RETIRADA",
+   "rotulo": "Prazo para retirar os documentos (dias)",
+   "padrao": "5",
+   "tipo": "numero"
+  },
+  {
+   "chave": "VALOR_DEBITO",
+   "rotulo": "Débito de honorários em aberto (R$) — vazio se não houver",
+   "padrao": "",
+   "tipo": "dinheiro"
+  },
+  {
+   "chave": "DATA_ASSINATURA",
+   "rotulo": "Data do documento",
+   "padrao": "",
+   "tipo": "data_extenso"
+  }
+ ],
+ "assinaturas": [
+  [
+   "{{RAZAO_SOCIAL}}",
+   "CONTRATANTE"
+  ],
+  [
+   "{{CONTRATADA}}",
+   "CONTRATADA"
+  ]
+ ],
+ "testemunhas": true,
+ "texto": "# DISTRATO DE CONTRATO DE PRESTAÇÃO DE SERVIÇOS CONTÁBEIS\n\nCONTRATANTE: **{{RAZAO_SOCIAL}}**, inscrita no CNPJ sob o nº {{CNPJ}}, representada neste ato por seu {{CARGO_REPRESENTANTE}} **{{REPRESENTANTE}}**, {{QUALIFICACAO_REPRESENTANTE}}, inscrito(a) no CPF sob o nº {{CPF}}, residente e domiciliado(a) nesta Capital;\n\nCONTRATADA: **{{CONTRATADA}}**, estabelecida na {{ENDERECO_CONTRATADA}}, inscrita no CNPJ sob o nº {{CNPJ_CONTRATADA}}.\n\nDe forma justa e acordada, as partes distratam, nesta oportunidade, o Contrato de Prestação de Serviços Profissionais celebrado entre si, mediante as cláusulas e condições abaixo descritas:\n\n## CLÁUSULA PRIMEIRA - DO OBJETO\n\nO presente instrumento tem por objeto rescindir em definitivo o contrato de prestação de serviços de assessoria e escrituração contábil celebrado entre as partes.\n\n## CLÁUSULA SEGUNDA - DA RESCISÃO E DA RESPONSABILIDADE TÉCNICA\n\nA Contratada encerra suas atividades técnicas junto à Contratante, permanecendo responsável pela escrita e rotinas contábeis até o dia **{{DATA_ENCERRAMENTO}}**, considerando que o pedido de rescisão foi formalizado pela Contratante em {{DATA_PEDIDO}}, cumprindo-se o aviso prévio de {{AVISO_PREVIO}} dias.\n\nParágrafo Único: A Contratada exime-se de qualquer responsabilidade técnica, civil ou penal por fatos geradores, atos ou omissões ocorridos em data posterior a {{DATA_ENCERRAMENTO}}, ficando sob a responsabilidade exclusiva da Contratante a competência do fechamento do mês de {{MES_ENCERRAMENTO}} em diante.\n\n## CLÁUSULA TERCEIRA - DA DEVOLUÇÃO DE DOCUMENTOS\n\nA Contratada deixa à disposição da Contratante, mediante protocolo de recebimento anexo que passa a fazer parte integrante deste termo, todos os documentos e arquivos em seu poder.\n\nParágrafo Primeiro: A Contratante fica ciente de que a documentação permanecerá à disposição para retirada na sede da Contratada por até {{PRAZO_RETIRADA}} dias após o encerramento do contrato. Caso os documentos não sejam retirados no mencionado prazo, estes poderão ser encaminhados aos órgãos competentes ou devolvidos via notificação postal com custos a cargo da Contratante.\n\n## CLÁUSULA QUARTA - DA QUITAÇÃO DAS OBRIGAÇÕES E PENDÊNCIAS FINANCEIRAS\n\nTodos os dispositivos e condições contidos no contrato original ficam, desde já, distratados. As partes dão quitação recíproca quanto às obrigações acessórias pactuadas, ressalvadas as pendências financeiras descritas abaixo:\n\nParágrafo Primeiro: Este distrato não abrange as obrigações financeiras relativas aos honorários contábeis devidos à Contratada.\n\nParágrafo Segundo: {{TEXTO_DEBITO}}\n\n## CLÁUSULA QUINTA - DA SUCESSÃO DE RESPONSABILIDADE TÉCNICA\n\nA Contratante declara-se ciente de sua inteira responsabilidade quanto à habilitação de um novo profissional contábil junto à Secretaria de Estado de Fazenda e Planejamento do Distrito Federal, eximindo, desde já, a Contratada de quaisquer penalidades fiscais, multas ou prejuízos futuros decorrentes da ausência ou atraso na indicação do novo responsável técnico.\n\n## CLÁUSULA SEXTA - DA PROTEÇÃO DE DADOS PESSOAIS (LGPD)\n\nAs partes declaram-se cientes das disposições da Lei Federal nº 13.709/2018 (Lei Geral de Proteção de Dados - LGPD) e assumem o compromisso de manter o sigilo absoluto sobre dados pessoais eventualmente tratados durante a vigência da relação contratual.\n\nParágrafo Único: Fica a Contratada autorizada a reter e conservar cópias de segurança dos documentos fiscais, contábeis e trabalhistas estritamente necessários para o cumprimento de obrigações legais, regulatórias, ou para sua defesa em processos judiciais ou administrativos (conforme art. 7º, II, e art. 16 da LGPD), comprometendo-se a eliminá-los definitivamente assim que expirarem os prazos legais de prescrição aplicáveis.\n\nE, por estarem assim justas e acordadas, as partes firmam o presente instrumento em 02 (duas) vias de igual teor e forma, na presença de 02 (duas) testemunhas.\n\nBrasília/DF, {{DATA_ASSINATURA}}."
+}

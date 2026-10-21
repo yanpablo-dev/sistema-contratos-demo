@@ -1,0 +1,101 @@
+{
+ "id": "prop_auditoria",
+ "nome": "Proposta de Serviços de Auditoria",
+ "descricao": "Auditoria das prestações de contas (condomínios): quadro de horas e honorários em 3 parcelas (30% / 40% / 30%).",
+ "mostrar_numero": true,
+ "rotulo_numero": "PROPOSTA Nº",
+ "campo_numero": "NUMERO_PROPOSTA",
+ "nome_arquivo": "{{RAZAO_SOCIAL}} - Proposta de Auditoria ({{NUMERO_PROPOSTA}})",
+ "campos": [
+  {
+   "chave": "NUMERO_PROPOSTA",
+   "rotulo": "Nº da proposta (ex.: 047 / 2026)",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "RAZAO_SOCIAL",
+   "rotulo": "Cliente (razão social ou nome)",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "CNPJ",
+   "rotulo": "CNPJ do cliente (se tiver)",
+   "padrao": ""
+  },
+  {
+   "chave": "AOS_CUIDADOS",
+   "rotulo": "A/C (pessoa de contato)",
+   "padrao": ""
+  },
+  {
+   "chave": "PERIODO_AUDITORIA",
+   "rotulo": "Período auditado (ex.: março de 2025 a março de 2026)",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "HORAS_COORDENACAO",
+   "rotulo": "Horas – coordenação e pareceres (auditor)",
+   "padrao": "30"
+  },
+  {
+   "chave": "HORAS_RELATORIOS",
+   "rotulo": "Horas – relatórios, análises e supervisão (auditor)",
+   "padrao": "30"
+  },
+  {
+   "chave": "HORAS_ANALISE",
+   "rotulo": "Horas – análise de contas (assistente)",
+   "padrao": "30"
+  },
+  {
+   "chave": "VALOR_HORA_AUDITOR",
+   "rotulo": "Valor da hora do auditor (R$)",
+   "padrao": "220,00",
+   "tipo": "dinheiro"
+  },
+  {
+   "chave": "VALOR_HORA_ASSISTENTE",
+   "rotulo": "Valor da hora do assistente (R$)",
+   "padrao": "180,00",
+   "tipo": "dinheiro"
+  },
+  {
+   "chave": "VALIDADE_DIAS",
+   "rotulo": "Validade da proposta (dias)",
+   "padrao": "15",
+   "tipo": "numero"
+  },
+  {
+   "chave": "CONTATO",
+   "rotulo": "Telefone / contato para esclarecimentos",
+   "padrao": "(61) 4000-0000, Sr. Carlos"
+  },
+  {
+   "chave": "CONTRATADA",
+   "rotulo": "Empresa Alfa da proposta",
+   "padrao": "ALFA CONTABILIDADE E AUDITORIA LTDA"
+  },
+  {
+   "chave": "CNPJ_CONTRATADA",
+   "rotulo": "CNPJ da empresa Alfa",
+   "padrao": "11.444.777/0001-61"
+  },
+  {
+   "chave": "DATA_ASSINATURA",
+   "rotulo": "Data da proposta",
+   "padrao": "",
+   "tipo": "data_extenso"
+  }
+ ],
+ "assinaturas": [
+  [
+   "{{CONTRATADA}}",
+   "Proponente"
+  ]
+ ],
+ "testemunhas": false,
+ "texto": "# PROPOSTA DE SERVIÇOS DE AUDITORIA\n\n**Ao(À) {{RAZAO_SOCIAL}}**\n\n?? **CNPJ:** {{CNPJ}}\n\n?? **A/C:** {{AOS_CUIDADOS}}\n\nAtendendo solicitação de V. Sas., temos o prazer e a honra de submeter à vossa apreciação a presente proposta para prestação de serviços de auditoria.\n\nA auditoria elaborada pela Alfa Contabilidade e Auditoria é realizada por profissionais com grande experiência em condomínios e por contadores. As modalidades de auditoria foram desenvolvidas especificamente para a revisão da prestação de contas condominial, permitindo aos condôminos a avaliação da eficiência e da eficácia da gestão administrativa do condomínio, proporcionando maior transparência e segurança.\n\nA auditoria para condomínios é a garantia de que as informações prestadas representam a realidade das transações financeiras ocorridas.\n\nAproveitamos o ensejo para agradecer a oportunidade que nos foi concedida de apresentarmos a presente proposta e subscrevemo-nos.\n\n## 1. - DO OBJETO\n\nConforme solicitação, apresentamos nossa proposta de serviços de auditoria nas prestações de contas do(a) **{{RAZAO_SOCIAL}}**, referente ao período de {{PERIODO_AUDITORIA}}, para a sua apreciação, conforme especificação dos honorários e dos serviços descritos nos tópicos e condições a seguir.\n\n## 2. - DA AUDITORIA\n\n2.1. Revisão e/ou apresentação dos balancetes demonstrativos mensais.\n\n2.2. Revisão dos procedimentos contábeis, trabalhistas, administrativos e dos controles internos, com as recomendações da auditoria para a eliminação de possíveis falhas e a regularização de inobservâncias das exigências trabalhistas, tributárias e de controles internos.\n\n2.3. Verificação do fluxo de caixa e conferência da movimentação financeira das disponibilidades dos saldos bancários.\n\n2.4. Revisão dos encargos previdenciários (INSS) sobre serviços prestados por autônomos e terceiros.\n\n2.5. Revisão dos aspectos tributários com referência às retenções e recolhimentos de PIS, COFINS e CSLL, quando aplicável.\n\n2.6. Auditoria da folha de pagamento e seus reflexos previdenciários, revisão dos pagamentos dos salários e demais benefícios, férias, rescisões trabalhistas etc.\n\n2.7. Auditoria das taxas ordinárias e taxas extras.\n\n2.8. Revisão das previsões orçamentárias.\n\n## 3. - DO PREÇO\n\nO preço total dos serviços é exposto no quadro abaixo:\n\n[[PRECO]]\n\nPelos serviços mencionados no item 2, o valor total de **R$ {{VALOR_TOTAL}}** ({{VALOR_TOTAL_EXTENSO}}) será cobrado da seguinte forma:\n\n**a)** 30% (trinta por cento) do valor total, no aceite desta proposta, correspondendo a R$ {{PARCELA_1}} ({{PARCELA_1_EXTENSO}});\n\n**b)** 40% (quarenta por cento) do valor total, 30 (trinta) dias após o pagamento da primeira parcela, correspondendo a R$ {{PARCELA_2}} ({{PARCELA_2_EXTENSO}});\n\n**c)** 30% (trinta por cento) do valor total, 60 (sessenta) dias após o pagamento da primeira parcela (ou 30 dias após a segunda), correspondendo a R$ {{PARCELA_3}} ({{PARCELA_3_EXTENSO}}).\n\n## 4. - DA DOCUMENTAÇÃO CONTÁBIL\n\nTodo o trabalho será realizado a partir da apresentação, pela atual administração, dos documentos contábeis, demais documentos comprobatórios e de controles gerenciais existentes no dia da aceitação desta proposta, os quais serão analisados caso a caso e julgados relevantes ou irrelevantes no tocante ao fato contábil, sendo de total responsabilidade da contratante a idoneidade dos documentos apresentados à auditoria.\n\n## 5. - DO PRAZO PARA REALIZAÇÃO DOS SERVIÇOS\n\nTodo o procedimento será realizado em {{TOTAL_HORAS}} horas de trabalho, podendo ser prorrogado ou reduzido conforme o desenvolvimento dos serviços.\n\nApós o aceite da presente proposta, será redigido um contrato de prestação de serviços entre as partes.\n\n## 6. - DISPOSIÇÕES GERAIS\n\nEsta proposta tem a validade de {{VALIDADE_DIAS}} dias corridos a partir da data de sua emissão.\n\nA {{CONTRATADA}} fica à disposição para maiores esclarecimentos que não tenham sido aqui expostos, pessoalmente ou pelo telefone {{CONTATO}}, e ainda na sede da empresa.\n\nAtenciosamente,\n\n>> Brasília/DF, {{DATA_ASSINATURA}}.\n\n[[ASSINATURAS]]"
+}

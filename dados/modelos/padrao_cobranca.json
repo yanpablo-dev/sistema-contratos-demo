@@ -1,0 +1,68 @@
+{
+ "id": "cobranca",
+ "nome": "Cobrança — Notificação de Débito e Solicitação de Regularização",
+ "descricao": "1º passo: avisa o cliente do débito, dos riscos fiscais e pede a regularização.",
+ "mostrar_numero": false,
+ "nome_arquivo": "{{RAZAO_SOCIAL}} - Notificação de Débito ({{DATA_ASSINATURA}})",
+ "campos": [
+  {
+   "chave": "RAZAO_SOCIAL",
+   "rotulo": "Razão social do cliente",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "CNPJ",
+   "rotulo": "CNPJ do cliente",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "AOS_CUIDADOS",
+   "rotulo": "A/C (aos cuidados de)",
+   "padrao": "Gerência / Setor Financeiro"
+  },
+  {
+   "chave": "VENCIMENTOS",
+   "rotulo": "Mensalidade(s) em aberto (vencimentos)",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "VALOR_DEBITO",
+   "rotulo": "Valor total em aberto (R$)",
+   "padrao": "",
+   "tipo": "dinheiro",
+   "obrigatorio": true
+  },
+  {
+   "chave": "TELEFONE_FINANCEIRO",
+   "rotulo": "Telefone/WhatsApp do Departamento Financeiro",
+   "padrao": "(61) 4000-0000"
+  },
+  {
+   "chave": "EMAIL_FINANCEIRO",
+   "rotulo": "E-mail do Departamento Financeiro",
+   "padrao": "financeiro@alfacontabil.example"
+  },
+  {
+   "chave": "CONTRATADA",
+   "rotulo": "Empresa Alfa do contrato",
+   "padrao": "ALFA SERVIÇOS CONTÁBEIS LTDA"
+  },
+  {
+   "chave": "DATA_ASSINATURA",
+   "rotulo": "Data do documento",
+   "padrao": "",
+   "tipo": "data_extenso"
+  }
+ ],
+ "texto": "# NOTIFICAÇÃO DE DÉBITO E SOLICITAÇÃO DE REGULARIZAÇÃO\n\n**À(ao) CONTRATANTE: {{RAZAO_SOCIAL}}**\n\n**CNPJ nº:** {{CNPJ}}\n\n**A/C:** {{AOS_CUIDADOS}}\n\nPrezado(a) Cliente,\n\nConstatamos em nossos registros que a empresa acima citada encontra-se inadimplente com as mensalidades de que trata o Contrato de Prestação de Serviços Profissionais firmado com a {{CONTRATADA}}, com vencimento(s) em {{VENCIMENTOS}}, no valor total de **R$ {{VALOR_DEBITO}} ({{VALOR_DEBITO_EXTENSO}})**, referente a honorários em aberto.\n\nDiante disso, solicitamos a especial gentileza de verificar a pendência junto ao seu setor financeiro para que possamos buscar uma solução consensual e regularizar os títulos em aberto.\n\n## 🚨 RISCOS LEGAIS DECORRENTES DA INADIMPLÊNCIA FISCAL\n\nRessaltamos que a manutenção da regularidade contábil e o envio das obrigações acessórias são indispensáveis para evitar consequências graves perante os órgãos públicos, tais como:\n\n1. **Riscos à Inscrição Estadual (CF/DF):** Conforme prevê o art. 27-E do Decreto nº 18.955/1997 do Distrito Federal, a falta de apresentação regular de documentos e informações ao fisco implica a suspensão da Inscrição Estadual. Sem a inscrição ativa, a empresa fica impedida de emitir notas fiscais e comercializar mercadorias.\n\n2. **Inaptidão e Bloqueio do CNPJ:** Nos termos da Instrução Normativa da Receita Federal do Brasil (RFB) nº 2119/2022, a omissão na entrega de declarações obrigatórias altera a situação cadastral do CNPJ para \"Inapto\", o que gera o bloqueio automático de contas bancárias e a impossibilidade de emitir certidões negativas.\n\n## REGULARIZAÇÃO E CONTATO\n\nEvite complicações fiscais e cadastrais para a sua empresa. Caso haja interesse na renegociação dos valores ou emissão de novas guias, entre em contato imediatamente com o nosso Departamento Financeiro:\n\n• 📞 **Telefone/WhatsApp:** {{TELEFONE_FINANCEIRO}}\n\n• 📧 **E-mail:** {{EMAIL_FINANCEIRO}}\n\nSe o pagamento já foi realizado, por favor, desconsidere esta notificação e nos envie o comprovante para que possamos atualizar nossos registros de forma prioritária.\n\nA ALFA agradece a parceria de sempre e aguarda seu breve retorno para solucionarmos essa pendência.\n\nAtenciosamente,\n\n[[ASSINATURAS]]\n\n>> Brasília/DF, {{DATA_ASSINATURA}}.",
+ "assinaturas": [
+  [
+   "{{CONTRATADA}}",
+   "Departamento Financeiro"
+  ]
+ ],
+ "testemunhas": false
+}

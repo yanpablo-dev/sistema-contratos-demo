@@ -1,0 +1,63 @@
+{
+ "id": "notificacao",
+ "nome": "Notificação Extrajudicial de Débito",
+ "descricao": "3º passo: dá prazo para regularizar e avisa das medidas legais (CDL, assessoria de cobrança e ação judicial).",
+ "mostrar_numero": false,
+ "nome_arquivo": "{{RAZAO_SOCIAL}} - Notificação Extrajudicial ({{DATA_ASSINATURA}})",
+ "campos": [
+  {
+   "chave": "RAZAO_SOCIAL",
+   "rotulo": "Razão social do cliente",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "CNPJ",
+   "rotulo": "CNPJ do cliente",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "VALOR_DEBITO",
+   "rotulo": "Valor total em aberto (R$)",
+   "padrao": "",
+   "tipo": "dinheiro",
+   "obrigatorio": true
+  },
+  {
+   "chave": "PRAZO_DIAS",
+   "rotulo": "Prazo para regularizar (dias)",
+   "padrao": "5",
+   "tipo": "numero"
+  },
+  {
+   "chave": "ENDERECO_CONTATO",
+   "rotulo": "Endereço para comparecimento",
+   "padrao": "Av. Exemplo, 1000, Sala 101, Centro, Brasília/DF"
+  },
+  {
+   "chave": "TELEFONE_FINANCEIRO",
+   "rotulo": "Telefone do Departamento de Cobrança",
+   "padrao": "(61) 4000-0000"
+  },
+  {
+   "chave": "CONTRATADA",
+   "rotulo": "Empresa Alfa do contrato",
+   "padrao": "ALFA SERVIÇOS CONTÁBEIS LTDA"
+  },
+  {
+   "chave": "DATA_ASSINATURA",
+   "rotulo": "Data do documento",
+   "padrao": "",
+   "tipo": "data_extenso"
+  }
+ ],
+ "texto": "# NOTIFICAÇÃO EXTRAJUDICIAL\n\n**À(ao) CONTRATANTE: {{RAZAO_SOCIAL}}**\n\n**CNPJ nº:** {{CNPJ}}\n\nPrezado(a) Senhor(a),\n\nPor meio desta notificação extrajudicial, informamos que se encontram em aberto os honorários contábeis sob sua responsabilidade, conforme previsto no Contrato de Prestação de Serviços firmado por Vossa Senhoria com a empresa {{CONTRATADA}}.\n\nAté a presente data, o débito perfaz o montante de **R$ {{VALOR_DEBITO}} ({{VALOR_DEBITO_EXTENSO}})**. A este valor serão acrescidos multa e juros de mora, em estrita conformidade com as cláusulas contratuais vigentes.\n\nCaso haja interesse de sua parte, disponibilizamos opções flexíveis de parcelamento e facilidades para a quitação integral do débito, evitando assim os custos adicionais decorrentes de uma cobrança judicial.\n\nDiante disso, solicitamos o seu **comparecimento ou contato no prazo máximo de {{PRAZO_DIAS}} dias, a contar do recebimento desta**, para regularizar a situação pendente.\n\n## Dados de Contato\n\n• **Endereço:** {{ENDERECO_CONTATO}}\n\n• 📞 **Telefone:** {{TELEFONE_FINANCEIRO}}\n\n## ⚖️ MEDIDAS LEGAIS CABÍVEIS\n\nCaso a pendência não seja regularizada no prazo estipulado, serão adotadas as medidas legais cabíveis, tais como:\n\n1. **Inclusão do débito e do seu nome no cadastro de inadimplentes da Câmara de Dirigentes Lojistas (CDL).**\n\n2. **Envio do caso para Assessoria de Cobrança**, o que acarretará o acréscimo de 10% (dez por cento) sobre o valor total a título de honorários advocatícios extrajudiciais, conforme previsão legal.\n\n3. **Ajuizamento das medidas judiciais cabíveis para a execução da dívida.**\n\nNa hipótese de o pagamento já ter sido efetuado, solicitamos a gentileza de enviar a cópia do respectivo comprovante para que possamos proceder com a baixa imediata.\n\nAtenciosamente,\n\n[[ASSINATURAS]]\n\n>> Brasília/DF, {{DATA_ASSINATURA}}.",
+ "assinaturas": [
+  [
+   "{{CONTRATADA}}",
+   "Departamento de Cobrança"
+  ]
+ ],
+ "testemunhas": false
+}

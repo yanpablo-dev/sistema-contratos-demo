@@ -1,0 +1,85 @@
+{
+ "id": "locacao",
+ "nome": "Contrato de Aluguel (Locação de Endereço Fiscal)",
+ "descricao": "Modelo baseado no contrato de locação da sala comercial da Trivium Solutions.",
+ "mostrar_numero": false,
+ "nome_arquivo": "{{RAZAO_SOCIAL}} - Contrato de Locação de Endereço Fiscal",
+ "assinaturas": [
+  [
+   "ALFA CONTABILIDADE E AUDITORIA LTDA",
+   "LOCADORA"
+  ],
+  [
+   "{{RAZAO_SOCIAL}}",
+   "LOCATÁRIA"
+  ]
+ ],
+ "campos": [
+  {
+   "chave": "RAZAO_SOCIAL",
+   "rotulo": "Razão social do locatário",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "CNPJ",
+   "rotulo": "CNPJ do locatário",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "CARGO_REPRESENTANTE",
+   "rotulo": "Cargo do representante",
+   "padrao": "Sócio Administrador"
+  },
+  {
+   "chave": "REPRESENTANTE",
+   "rotulo": "Nome do representante",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "NACIONALIDADE",
+   "rotulo": "Nacionalidade do representante",
+   "padrao": "BRASILEIRA"
+  },
+  {
+   "chave": "CPF",
+   "rotulo": "CPF do representante",
+   "padrao": "",
+   "obrigatorio": true
+  },
+  {
+   "chave": "ATIVIDADE",
+   "rotulo": "Atividade (uso do endereço)",
+   "padrao": "SERVIÇOS PRESTADOS"
+  },
+  {
+   "chave": "VALOR",
+   "rotulo": "Aluguel mensal (R$)",
+   "padrao": "",
+   "obrigatorio": true,
+   "tipo": "dinheiro"
+  },
+  {
+   "chave": "DATA_INICIO",
+   "rotulo": "Início da locação",
+   "padrao": "",
+   "obrigatorio": true,
+   "tipo": "data"
+  },
+  {
+   "chave": "CIDADE",
+   "rotulo": "Cidade da assinatura",
+   "padrao": "Brasília/DF"
+  },
+  {
+   "chave": "DATA_ASSINATURA",
+   "rotulo": "Data da assinatura",
+   "padrao": "",
+   "tipo": "data_extenso"
+  }
+ ],
+ "texto": "# CONTRATO DE LOCAÇÃO DE ENDEREÇO FISCAL\n\nPelo presente Instrumento Particular de Contrato de Locação de Endereço Fiscal, de um lado a empresa, **ALFA CONTABILIDADE E AUDITORIA LTDA**, inscrita no CNPJ sob o nº 11.444.777/0001-61, situada nesta capital na Av. Exemplo, 1000, Sala 101, Centro, Brasília/DF, neste ato, representada pelo Sr. **JOÃO DA SILVA EXEMPLO**, brasileiro, casado, contador, portador da Carteira de Identidade/CRC nº. DF-000.000 O-0 expedida pelo CRC/DF e inscrito no CPF/MF sob o nº. 000.000.000-00, doravante designado simplesmente como LOCADOR, e de outro lado, a Pessoa Jurídica, **{{RAZAO_SOCIAL}}**, inscrita no CNPJ sob o nº {{CNPJ}}, situada nesta capital e representada pelo(a) seu(sua) {{CARGO_REPRESENTANTE}}, o(a) Sr(a). **{{REPRESENTANTE}}**, nacionalidade {{NACIONALIDADE}} e inscrito(a) no CPF sob o nº. {{CPF}}, doravante designado simplesmente como LOCATÁRIO, resolvem firmar o presente Instrumento Particular de Contrato, se obrigando a respeitá-lo em todos os seus termos e condições, bem como assume a LOCATÁRIO integral responsabilidade pelas informações prestadas e autorizações concedidas, sendo que o presente Instrumento será regido pelas cláusulas seguintes:\n\nCLÁUSULA PRIMEIRA: A Primeira acima nomeada, aqui chamada LOCADORA sendo proprietária do Endereço Fiscal situada na Av. Exemplo, número 1000, Sala 101, bairro Centro, município BRASÍLIA/DF, CEP: 70000-000, loca-o ao segundo dos acima nomeados, designado LOCATÁRIA, para fins de atividade exclusivamente de {{ATIVIDADE}}, mediante as condições seguintes.\n\nParágrafo Primeiro - O aludido endereço fiscal objeto do presente CONTRATO DE LOCAÇÃO, destina-se exclusivamente ao uso da LOCATARIA. Não podendo o mesmo mudar o seu exercício aqui pactuado contratualmente, sob pena de vir a ser rescindido de pleno. Salvo procedente pôr escrito da LOCADORA, sua mudança da destinação.\n\nCLÁUSULA SEGUNDA: O Prazo da Locação, será a partir do dia **{{DATA_INICIO}}** e seu tempo de duração é por tempo indeterminado.\n\nCLÁUSULA TERCEIRA: O Valor mensal do aluguel, pactuado entre as partes será de **R$ {{VALOR}} ({{VALOR_EXTENSO}})** a ser pago pela LOCATÁRIA em moeda corrente do país ou em bancos autorizados pela LOCADORA. Não sido pago o aluguel nesse prazo, aplicar-se à multa de 02 (dois) por cento sobre o valor do aluguel referente ao mês vencido, cumulativamente até a efetiva quitação do débito, mais juros de 01 (um) por cento ao mês, perdurando por mais 30 (trinta) dias de atraso no aluguel, será o débito encaminhado ao escritório de advocacia e mais 20 (vinte) por cento de honorários advocatícios.\n\nCLÁUSULA QUARTA: Deverá ser enviado mensalmente os comprovantes de pagamento dos tributos/taxas referente ao imóvel citado, enviar para o e-mail contato@alfacontabil.example.\n\nCLÁUSULA QUINTA: o Preço do aluguel mensal acessório da locação, acima pactuado, será reajustado ANUALMENTE de acordo com o índice oficial do Governo Federal, IGPM (FGV) ou em sua falta, pelo índice IPC (FIPE), IGP (FGV) e INPC (IBGE) respectivamente pela ordem.\n\nParágrafo Único - Na falta do IGPM/FGV, seja por motivo de extinção ou não, fica desde já estabelecido que o índice substituto será sucessivamente o IPC (FIPE), IGP (FGV) e o INPC (IBGE), respectivamente pela ordem. Caso estes índices sejam extintos ou não calculados, o reajuste será feito pela média de 03 índices que reflita a variação da inflação ocorrida no período.\n\nCLÁUSULA SEXTA: Se necessário a propositura de ações de despejo, consignações em pagamento de aluguéis e acessórios da locação, as citações, intimações e notificações, além das formas previstas no CPC, poderão ser feitas mediante correspondência com aviso de recebimento (AR ou SEED). Tratando-se de pessoa jurídica ou firma individual, poderão também ser feita as citações notificações ou intimações, por e-mail ou WhatsApp.\n\nCLAUSULA SETIMA: Se a LOCADORA admitir por escrito em benefício da LOCATÁRIA qualquer tolerância ou concessão no que tange atraso no pagamento do aluguel e demais despesas que lhe incumba, ou no cumprimento de qualquer outra obrigação contratual, essa tolerância não poderá ser considerada como alteração das condições deste contrato, constituíra apenas ato de mera liberalidade da LOCADORA.\n\nCLÁUSULA OITAVA: Em caso de venda do imóvel a LOCATÁRIA será notificada do direito de preferência previsto, na lei do Inquilinato, através de carta com aviso de recebimento (AR ou SEED). Não se manifestando a LOCATÁRIA no prazo legal de 30 dias, será considerada como desistente. Não efetuando a compra do imóvel. A LOCATÁRIA autoriza a LOCADORA a mostrar o imóvel aos futuros pretendentes, desde que o faça acompanhado de um corretor credenciado pela empresa.\n\nCLÁUSULA NONA: A LOCATÁRIA poderá fazer na sala/parte locada, as suas expensas, as necessárias modificações, desde que não afetem a estrutura do imóvel, o fazendo mediante prévia aprovação escrita da LOCADORA. As benfeitorias introduzidas pela LOCATÁRIA ficarão fazendo parte integrante do imóvel, executadas apenas as que sejam removíveis, que poderão ser retiradas por ocasião da entrega da sala/parte locada, não podendo ser repassadas a locadora suas despesas, incorporando-se estas ao imóvel e dele fazendo parte integrante.\n\nParágrafo Único - A LOCATÁRIA não terá, no que atinja essas benfeitorias , direito a qualquer indenização ou retenção, a não ser em relação às necessárias, que serão indenizáveis, não podendo em nenhuma hipótese, invocar direito de retenção por benfeitorias.\n\nCLÁUSULA DÉCIMA: É expressamente vedada a LOCATÁRIA, sem o consentimento prévio e por escrito do LOCADORA ceder, transferir, sublocar ou emprestar, total ou parcialmente, a outrem esta parte locada ou de qualquer forma, permitir a terceiro o uso da mesma, sob pena de rescisão de pleno direito da Locação, independente da previa notificação ou interpelação Judicial e extrajudicial.\n\nCLÁUSULA DÉCIMA PRIMEIRA: Fica estipulada a multa de 01 (um) mês de aluguel vigente na data da ocorrência, a parte que infringir qualquer clausula deste contrato, havendo faculta para a parte inocente de considerar rescindida a locação, independentemente de qualquer que seja o tempo ocorrido do presente contrato, e promover o despejo do imóvel.\n\nParágrafo Único: O presente contrato obrigará as partes, por si, seus herdeiros ou sucessores.\n\nCLÁUSULA DÉCIMA SEGUNDA: Fica eleito o foro da comarca de Brasília, Distrito Federal, para dirimir qualquer conflito advindo do presente Instrumento, não obstante qualquer alteração de domicilio das Partes, com renúncia expressa de qualquer outro, por mais privilegiado que seja.\n\nE assim, por estarem justos e contratados, assinam o presente Instrumento em duas vias de igual teor e forma, na presença de duas testemunhas.\n\n{{CIDADE}}, **{{DATA_ASSINATURA}}**.",
+ "espaco_assinatura": 1.8
+}
