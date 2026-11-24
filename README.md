@@ -78,3 +78,6 @@ gerar\_exemplos.py      cria os dados de demonstração
 
 Desenvolvido por Yan pablo machado costa.
 
+## Licença
+
+Distribuído sob a licença MIT. Veja o arquivo [LICENSE](LICENSE).
