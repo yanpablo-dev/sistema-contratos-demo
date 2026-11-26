@@ -1,5 +1,7 @@
 # Sistema de Gestão de Contratos
 
+[![Testes](https://github.com/yanpablo-dev/sistema-contratos-demo/actions/workflows/testes.yml/badge.svg)](https://github.com/yanpablo-dev/sistema-contratos-demo/actions/workflows/testes.yml)
+
 Sistema web para escritórios de contabilidade. Ele **gera, organiza e acompanha** contratos, propostas comerciais e documentos de cobrança. Os documentos saem prontos em **Word e PDF**, no padrão visual do escritório, e a carteira de clientes fica num painel único.
 
 > \*\*Versão de demonstração.\*\* O sistema original está em uso num escritório de contabilidade. Nesta versão, a empresa ("Alfa Contabilidade e Auditoria"), as pessoas, os CNPJs e os endereços são \*\*fictícios\*\*.
@@ -74,6 +76,12 @@ Bibliotecas opcionais, para ler contratos em PDF e trabalhar com planilhas:
 
 ```bash
 pip install -r requirements.txt
+```
+
+Para rodar os testes automatizados:
+
+```bash
+python -m unittest discover -s tests -v
 ```
 
 ## Estrutura
