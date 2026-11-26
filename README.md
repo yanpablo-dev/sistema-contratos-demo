@@ -27,6 +27,26 @@ O escritório guardava centenas de contratos em pastas de rede, com nomes de arq
 * **Integrações:** consulta de CNPJ em API pública, sincronização da carteira com o sistema interno do escritório e acompanhamento de assinaturas eletrônicas no Autentique.
 * **Uso em rede:** um computador roda o servidor e os demais acessam pelo navegador.
 
+## Telas
+
+> Capturas da versão de demonstração, com dados fictícios.
+
+**Painel** — resumo da análise da pasta de contratos e próximos passos
+
+![Painel](docs/painel.jpg)
+
+**Contratos** — cada arquivo com a empresa identificada, a confiança e as datas
+
+![Lista de contratos](docs/contratos.jpg)
+
+**Cobrança / Termos de Acordo** — fluxo de cobrança em quatro etapas e acompanhamento por cliente
+
+![Fluxo de cobrança](docs/cobranca.jpg)
+
+**Propostas** — modelos de proposta comercial e propostas emitidas
+
+![Propostas](docs/propostas.jpg)
+
 ## Tecnologias
 
 |Camada|Tecnologia|
